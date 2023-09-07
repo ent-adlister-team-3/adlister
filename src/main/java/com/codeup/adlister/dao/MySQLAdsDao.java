@@ -14,6 +14,7 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
+
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
@@ -57,6 +58,28 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Ad findById (long id){
+        String query = "SELECT * FROM ads WHERE id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                Ad ad = new Ad();
+                ad.setId(resultSet.getLong("id"));
+                ad.setTitle(resultSet.getString("title"));
+                ad.setDescription(resultSet.getString("description"));
+                // Set other ad attributes here
+
+                return ad;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception appropriately
+        }
+        return null; // Return null if no ad with the given ID was found
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
                 rs.getLong("id"),
@@ -66,7 +89,6 @@ public class MySQLAdsDao implements Ads {
                 rs.getDouble("price")
         );
     }
-
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
         while (rs.next()) {
