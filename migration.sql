@@ -1,4 +1,4 @@
-USE adlister_db;
+USE mydatabase;
 
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
