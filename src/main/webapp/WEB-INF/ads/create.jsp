@@ -19,9 +19,9 @@
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input id="price" name="price" class="form-control" type="number">
-            <input type="submit" class="btn btn-block btn-primary">
+            <input id="price" name="price" class="form-control" type="text">
         </div>
+        <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
 </body>
