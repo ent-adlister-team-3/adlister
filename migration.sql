@@ -1,4 +1,5 @@
-USE mydatabase;
+CREATE DATABASE IF NOT EXISTS puff_db;
+USE puff_db;
 
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
