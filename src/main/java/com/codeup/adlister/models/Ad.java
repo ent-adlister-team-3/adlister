@@ -7,7 +7,7 @@ public class Ad {
     private String description;
 
     public Ad() {
-        
+
     }
 
     public double getPrice() {
@@ -26,14 +26,7 @@ public class Ad {
 
     private double price;
 
-    public Ad(long id, long userId, String title, String description) {
-        this.id = id;
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
-    }
-
-    public Ad(long id, long userId, String title, String description, double price) {
+    public Ad(long id, long userId, String title, String description, Double price) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -41,7 +34,15 @@ public class Ad {
         this.price = price;
     }
 
-    public Ad(long userId, String title, String description, double price) {
+//    public Ad(long id, long userId, String title, String description, double price) {
+//        this.id = id;
+//        this.userId = userId;
+//        this.title = title;
+//        this.description = description;
+//        this.price = price;
+//    }
+
+    public Ad(long userId, String title, String description, Double price) {
         this.userId = userId;
         this.title = title;
         this.description = description;
