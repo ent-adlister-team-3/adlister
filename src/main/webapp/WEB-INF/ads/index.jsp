@@ -16,6 +16,7 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <input name="edit" value="Edit" type="button">
         </div>
     </c:forEach>
 </div>
