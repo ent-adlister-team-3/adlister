@@ -6,6 +6,10 @@ public class Ad {
     private String title;
     private String description;
 
+    public Ad() {
+        
+    }
+
     public double getPrice() {
         return price;
     }
