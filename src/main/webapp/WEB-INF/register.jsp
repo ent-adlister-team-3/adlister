@@ -27,9 +27,8 @@
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
             <div class="form-group">
-                <label for="phone-number">Phone Number</label>
-                <input id="phone-number" name="phone-number" class="form-control" type="text">
-
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" name="phoneNumber" class="form-control" type="text">
             </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
