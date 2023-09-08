@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.codeup.adlister.util.Config;
 import com.mysql.cj.jdbc.Driver;
 
@@ -24,7 +25,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
-
     @Override
     public List<Ad> all() {
         PreparedStatement stmt = null;
@@ -36,7 +36,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-
     @Override
     public Long insert(Ad ad) {
         try {
@@ -54,7 +53,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
-
     @Override
     public Ad findById (long id){
         String query = "SELECT * FROM ads WHERE id = ?";
@@ -78,7 +76,6 @@ public class MySQLAdsDao implements Ads {
         }
         return null; // Return null if no ad with the given ID was found
     }
-
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
                 rs.getLong("id"),
@@ -95,7 +92,6 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
-
     @Override
     public void editAd(Ad ad) {
         String editQuery = "UPDATE ads SET title = ?, description = ?, price = ? WHERE id = ?";
@@ -111,7 +107,6 @@ public class MySQLAdsDao implements Ads {
         }
 
     }
-
     @Override
     public void deleteAd(long id) {
         String deleteQuery = "DELETE FROM ads WHERE id = ?";
@@ -123,6 +118,52 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error deleting the ad.", e);
         }
     }
+    @Override
+    public List<Ad> findByUser(User user) {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Ad> userAds = new ArrayList<>();
 
+        try {
+            String query = "SELECT * FROM ads WHERE user_id = ?";
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setLong(1, user.getId()); // Assuming user has an ID field
+
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                // Create Ad objects from the result set and add them to the list
+                Ad ad = new Ad(
+                        resultSet.getLong("id"),
+                        resultSet.getLong("user_id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("description"),
+                        resultSet.getDouble("price")
+                        // Add other fields as needed
+                );
+                userAds.add(ad);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error fetching user ads.", e);
+        } finally {
+            // Close database resources in the reverse order of opening
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return userAds;
+    }
 
 }
