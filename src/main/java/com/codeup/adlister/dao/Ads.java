@@ -16,5 +16,5 @@ public interface Ads {
 
     void editAd(Ad ad);
 
-    void deleteAd(int adId, long id);
+    void deleteAd(int id);
 }
