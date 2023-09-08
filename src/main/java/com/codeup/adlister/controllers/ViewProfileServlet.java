@@ -1,21 +1,46 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
 public class ViewProfileServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
-            return;
-        }
-        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//        if (request.getSession().getAttribute("user") == null) {
+//            response.sendRedirect("/login");
+//            return;
+//        }
+//        User currentUser = (User) request.getSession().getAttribute("user");
+//        List<Ad> userAds = DaoFactory.getAdsDao().findByUser(currentUser);
+//        request.setAttribute("userAds", userAds);
+//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+//    }
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    if (request.getSession().getAttribute("user") == null) {
+        response.sendRedirect("/login");
+        return;
     }
 
+    User currentUser = (User) request.getSession().getAttribute("user");
+    System.out.println("User ID: " + currentUser.getId());
+
+    List<Ad> userAds = DaoFactory.getAdsDao().findByUser(currentUser);
+    System.out.println("Number of ads retrieved: " + userAds.size());
+
+    request.setAttribute("userAds", userAds);
+    request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+}
 
 }
+
+
