@@ -4,6 +4,7 @@ import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.util.Config;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,13 +37,14 @@ public class EditUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String hash = BCrypt.hashpw(req.getParameter("password"), BCrypt.gensalt());
 
         long userId = Long.parseLong(req.getParameter("editId"));
         User user = new User(
                 userId,
                 req.getParameter("username"),
                 req.getParameter("email"),
-                req.getParameter("password"),
+                hash,
                 req.getParameter("phone_number")
         );
         DaoFactory.getUsersDao().editUser(user);
