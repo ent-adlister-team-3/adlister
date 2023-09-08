@@ -41,6 +41,6 @@ public class EditAdsServlet extends HttpServlet {
                 price
         );
         DaoFactory.getAdsDao().editAd(ad);
-        resp.sendRedirect("/ads");
+        resp.sendRedirect("/profile");
     }
 }
