@@ -32,10 +32,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     }
 
     User currentUser = (User) request.getSession().getAttribute("user");
-    System.out.println("User ID: " + currentUser.getId());
 
     List<Ad> userAds = DaoFactory.getAdsDao().findByUser(currentUser);
-    System.out.println("Number of ads retrieved: " + userAds.size());
 
     request.setAttribute("userAds", userAds);
     request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
