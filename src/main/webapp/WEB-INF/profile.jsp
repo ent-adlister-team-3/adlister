@@ -22,6 +22,11 @@
         <div class="col text-center">
             Phone Number: ${sessionScope.user.phoneNumber}<br>
             Email: ${sessionScope.user.email}
+            <br>
+            <form action="/ads/edit-user" method="get">
+                <input type="hidden" name="id" value="${sessionScope.user.id}">
+                <button type="submit">Edit</button>
+            </form>
         </div>
     </div>
 </div>
