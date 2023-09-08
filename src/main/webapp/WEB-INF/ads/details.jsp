@@ -15,7 +15,7 @@
             <p>${adDetails.getDescription()}</p>
             <p>${adDetails.getPrice()}</p>
             <form action="/ads/edit" method="GET">
-                <input name="edit" value="${ad.id}" type="hidden">
+                <input name="edit" value="${adDetails.getId()}" type="hidden">
                 <button type="submit">Edit</button>
             </form>
             <form action="/ads/delete" method="POST">
