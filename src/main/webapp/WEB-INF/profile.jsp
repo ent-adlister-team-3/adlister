@@ -42,6 +42,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Ad Title: ${ad.title} <br></h5>
                                     <p class="card-text">Ad Description: ${ad.description}</p>
+                                    <form action="/ads/edit" method="GET">
+                                        <input name="edit" value="${ad.id}" type="hidden">
+                                        <button type="submit">Edit</button>
+                                    </form>
+                                    <form action="/ads/delete" method="POST">
+                                        <input name="delete" value="${ad.id}" type="hidden">
+                                        <button type="submit">Delete</button>
+                                    </form>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Ad Price: ${ad.price}</li>
