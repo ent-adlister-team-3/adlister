@@ -67,6 +67,7 @@ public class MySQLAdsDao implements Ads {
                 ad.setId(resultSet.getLong("id"));
                 ad.setTitle(resultSet.getString("title"));
                 ad.setDescription(resultSet.getString("description"));
+                ad.setPrice(resultSet.getDouble("price"));
                 // Set other ad attributes here
 
                 return ad;

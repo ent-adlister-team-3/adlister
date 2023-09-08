@@ -16,8 +16,8 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
-            <form action="/ads/edit" method="POST">
-                <input name="edit" value="Edit" type="hidden">
+            <form action="/ads/edit" method="GET">
+                <input name="edit" value="${ad.id}" type="hidden">
                 <button type="submit">Edit</button>
                 <button type="submit" formaction="/ads/delete">Delete</button>
             </form>
