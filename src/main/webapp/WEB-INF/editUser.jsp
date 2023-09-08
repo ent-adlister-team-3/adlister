@@ -3,14 +3,14 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Edit User"/>
+        <jsp:param name="title" value="editUser"/>
     </jsp:include>
     <title>Edit User</title>
 </head>
 <body>
 <h1>Edit User</h1>
-<form action="ads/edit-user" method="post">
-    <input type="hidden" name="id" value="${user.id}">
+<form action="/editUser" method="POST">
+    <input type="hidden" name="editId" value="${user.id}">
     <label for="username">Username:</label>
     <input type="text" name="username" value="${user.username}" required><br>
     <label for="email">Email:</label>

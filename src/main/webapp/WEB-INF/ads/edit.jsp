@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1>Edit your ad</h1>
-    <form action="/ads/edit" method="post">
+    <form action="/ads/edit" method="POST">
         <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text" value="${editedAd.getTitle()}">

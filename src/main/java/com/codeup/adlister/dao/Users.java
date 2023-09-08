@@ -9,4 +9,7 @@ public interface Users {
     User findByUsername(String username);
     Long insert(User user);
 
+    void editUser(User user);
+
+    User findById(long userId);
 }
