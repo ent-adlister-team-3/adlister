@@ -19,7 +19,7 @@
                 <button type="submit">Edit</button>
             </form>
             <form action="/ads/delete" method="POST">
-                <input name="delete" value="Delete" type="hidden">
+                <input name="delete" value="${adDetails.getId()}" type="hidden">
                 <button type="submit">Delete</button>
             </form>
         </c:when>
