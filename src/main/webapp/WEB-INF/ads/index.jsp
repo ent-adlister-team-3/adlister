@@ -19,6 +19,11 @@
             <form action="/ads/edit" method="POST">
                 <input name="edit" value="Edit" type="hidden">
                 <button type="submit">Edit</button>
+                <button type="submit" formaction="/ads/delete">Delete</button>
+            </form>
+            <form action="/ads/delete" method="POST">
+                <input name="delete" value="Delete" type="hidden">
+                <button type="submit">Delete</button>
             </form>
         </div>
     </c:forEach>
