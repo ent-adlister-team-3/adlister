@@ -19,7 +19,7 @@ public class EditAdsServlet extends HttpServlet {
             resp.sendRedirect("/login");
             return;
         }
-        req.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req, resp);
     }
 
     @Override

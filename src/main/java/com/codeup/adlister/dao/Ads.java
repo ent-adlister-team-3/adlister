@@ -14,5 +14,5 @@ public interface Ads {
     // Find by ID
     Ad findById(long id);
 
-    Long editAd(Ad ad);
+    void editAd(Ad ad);
 }
