@@ -19,14 +19,22 @@ public class EditAdsServlet extends HttpServlet {
             resp.sendRedirect("/login");
             return;
         }
+        long adId = Long.parseLong(req.getParameter("edit"));
+        // find the actual ad object
+        Ad editedAd = DaoFactory.getAdsDao().findById(adId);
+        // add the ad to the req attributes
+        req.setAttribute("editedAd", editedAd);
         req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User loggedInUser = (User) req.getSession().getAttribute("user");
         double price = Double.parseDouble(req.getParameter("price"));
-        Ad ad = new Ad (
+        User loggedInUser = (User) req.getSession().getAttribute("user");
+
+        long adId = Long.parseLong(req.getParameter("edit"));
+        Ad ad = new Ad(
+                adId,
                 loggedInUser.getId(),
                 req.getParameter("title"),
                 req.getParameter("description"),

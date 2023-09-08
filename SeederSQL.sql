@@ -1,10 +1,5 @@
 USE puff_db;
 
-INSERT INTO users (username, email, password, phone_number)
-VALUES ('John', 'john@email.com', 'password', '1234567890'),
-       ('Jane', 'jane@email.com', 'password', '1234567890'),
-       ('Bob', 'bob@email.com', 'password', '1234567890');
-
 INSERT INTO ads (user_id, title, description, price)
 VALUES (1, 'Clothes', 'Clothes', 100),
        (1, 'Shirt', 'Shirt', 25),
