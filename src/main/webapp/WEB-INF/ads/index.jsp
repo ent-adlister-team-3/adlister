@@ -11,21 +11,14 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-            <form action="/ads/edit" method="GET">
-                <input name="edit" value="${ad.id}" type="hidden">
-                <button type="submit">Edit</button>
-                <button type="submit" formaction="/ads/delete">Delete</button>
-            </form>
-            <form action="/ads/delete" method="POST">
-                <input name="delete" value="Delete" type="hidden">
-                <button type="submit">Delete</button>
-            </form>
-        </div>
+                <div class="col-md-6">
+                    <h2>${ad.title}</h2>
+                    <form action="/ads/details" method="GET">
+                        <input name="details" value="${ad.id}" type="hidden">
+                        <button type="submit">Show more</button>
+                    </form>
+                </div>
     </c:forEach>
 </div>
 
