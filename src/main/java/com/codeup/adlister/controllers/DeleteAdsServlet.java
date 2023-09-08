@@ -13,10 +13,6 @@ import java.io.IOException;
 @WebServlet("/ads/delete")
 public class DeleteAdsServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/ads/delete.jsp").forward(req, resp);
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,10 +21,10 @@ public class DeleteAdsServlet extends HttpServlet {
             resp.sendRedirect("/login");
             return;
         }
-        int adId = Integer.parseInt(req.getParameter("adId"));
-        DaoFactory.getAdsDao().deleteAd(adId, loggedInUser.getId());
+        long adId = Long.parseLong(req.getParameter("delete"));
+        DaoFactory.getAdsDao().deleteAd(adId);
 
-        resp.sendRedirect("/profile");
+        resp.sendRedirect("/ads");
 
     }
 
