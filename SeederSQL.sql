@@ -1,4 +1,16 @@
 USE puff_db;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE ads (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    user_id INT UNSIGNED NOT NULL,
+    title VARCHAR(240) NOT NULL,
+    description TEXT NOT NULL,
+    price double NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users (id)
+    ON DELETE CASCADE
+);
 
 INSERT INTO ads (user_id, title, description, price)
 VALUES (1, 'Clothes', 'Clothes', 100),
@@ -11,4 +23,5 @@ VALUES (1, 'Clothes', 'Clothes', 100),
        (3, 'Jacket', 'Jacket', 75),
        (3, 'Scarf', 'Scarf', 20),
        (3, 'Belt', 'Belt', 10);
+
 
