@@ -33,9 +33,16 @@
     </button>
 
     <c:if test="${pageContext.request.requestURI == '/WEB-INF/ads/index.jsp'}">
-        <div class="input-group">
-            <input type="text" class="form-control rounded-pill" placeholder="Search for Clothes!" aria-label="Search for Clothes!" aria-describedby="button-addon2">
-        </div>
+
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchQuery" placeholder="Search for Clothes" onkeyup="filterAds()">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="filterAds()">Search</button>
+                </div>
+            </div>
+        </form>
+
     </c:if>
 
     <div class="collapse navbar-collapse" id="navbarNav">
