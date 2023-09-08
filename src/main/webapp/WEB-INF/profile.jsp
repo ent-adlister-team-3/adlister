@@ -3,14 +3,14 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Your Profile" />
+        <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
 
 </head>
 <body>
 
 <header>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 </header>
 
 <div class="container">
@@ -22,8 +22,8 @@
             Phone Number: ${sessionScope.user.phoneNumber}<br>
             Email: ${sessionScope.user.email}
             <br>
-            <form action="/ads/edit-user" method="get">
-                <input type="hidden" name="id" value="${sessionScope.user.id}">
+            <form action="/editUser" method="GET">
+                <input type="hidden" name="editId" value="${sessionScope.user.getId()}">
                 <button type="submit">Edit</button>
             </form>
         </div>
