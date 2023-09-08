@@ -1,5 +1,4 @@
 USE puff_db;
-
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE ads (
