@@ -1,0 +1,15 @@
+.custom-registration-button{
+    width: 100%;
+    border-radius: 2rem;
+}
+
+.centerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.test{
+    color: aquamarine;
+}
