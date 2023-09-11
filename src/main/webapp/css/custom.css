@@ -22,6 +22,10 @@
     width: 90%;
 }
 
+.wbd{
+    width: 90%;
+}
+
 .btn-primary{
     --bs-btn-bg: #FC5A8C;
     --bs-btn-border-color: unset!important;
