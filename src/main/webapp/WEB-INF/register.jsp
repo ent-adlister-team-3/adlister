@@ -66,8 +66,8 @@
 
 
 </header>
-<div class="">
-    <div class="row">
+<div class="container-fluid min-vh-100 p-0">
+    <div class="row min-vh-100 p-0">
         <div class="col-8">
             <jsp:include page="/WEB-INF/partials/carosuel.jsp" />
         </div>

@@ -93,3 +93,19 @@
 body {
     background: #FDBCCD!important;
 }
+
+.carousel.slide {
+    height: 100%;
+}
+.carousel .carousel-inner {
+    height: 100%;
+}
+.carousel .carousel-inner .carousel-item {
+    height: 100%;
+}
+
+.carousel .carousel-inner .carousel-item > img:first-of-type {
+    height: 100%;
+    object-fit: cover;
+}
+
