@@ -16,6 +16,10 @@
 
 .search-opa{
     background-color: rgba(248, 249, 250, 0.48) !important;
+    width: 90%;
+}
+.py-3.wbd {
+    width: 90%;
 }
 
 .btn-primary{

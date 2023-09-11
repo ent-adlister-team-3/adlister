@@ -71,7 +71,7 @@
         <div class="col-8">
             <jsp:include page="/WEB-INF/partials/carosuel.jsp" />
         </div>
-        <div class="col-4 py-5">
+        <div class="col-4 py-5 mr-2">
 
 
             <h1 class="text-center"><strong>Sign Up</strong></h1>
@@ -105,7 +105,7 @@
                            placeholder="Enter Phone Number...">
                     <span id="phoneNumberError" class="text-danger"></span>
                 </div>
-                <div class="py-3">
+                <div class="py-3 wbd">
                     <input type="submit" class="btn btn-primary shadow btn-block custom-registration-button">
                 </div>
             </form>
