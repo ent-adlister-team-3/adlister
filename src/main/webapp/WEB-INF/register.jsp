@@ -58,7 +58,7 @@
         }
     </script>
 
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.png">
+
 
 </head>
 <body>
