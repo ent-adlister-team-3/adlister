@@ -2,7 +2,7 @@
 <%-- 1 row Navbar--%>
 <nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar">
 <%--<nav class="navbar navbar-expand-lg shadow navbar-light bg-light color-cycling-navbar">--%>
-    <a class="navbar-brand mx-4" href="/ads">Puff Clothing</a>
+    <a class="navbar-brand mx-4" href="/">Puff Clothing</a>
     <img src="/img/icons.png" class="mx-4" alt="ppg" style="max-height: 40px; width: auto; display: block; margin: 0 auto">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
 
 <%--    Pill search button--%>
 <%--    Needs tp be centered (its currently above)--%>
-    <c:if test="${pageContext.request.requestURI == '/WEB-INF/ads/index.jsp'}">
+    <c:if test="${pageContext.request.requestURI == '/index.jsp'}">
         <form>
             <div class="input-group search-inc mx-4 px-4">
                 <input type="text" class="form-control pill-search" id="searchQuery" placeholder="Search for Clothes" onkeyup="filterAds()">
