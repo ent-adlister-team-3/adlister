@@ -13,7 +13,7 @@
 <%--    Pill search button--%>
 <%--    Needs tp be centered (its currently above)--%>
     <c:if test="${pageContext.request.requestURI == '/index.jsp'}">
-        <form>
+        <form style="margin-bottom: 2px">
             <div class="input-group search-inc mx-4 px-4">
                 <input type="text" class="form-control pill-search" id="searchQuery" placeholder="Search for Clothes" onkeyup="filterAds()">
                 <div class="input-group-append">
