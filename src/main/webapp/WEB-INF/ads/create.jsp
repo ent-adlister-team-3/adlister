@@ -22,6 +22,7 @@
             <input id="price" name="price" class="form-control" type="text">
         </div>
         <input type="submit" class="btn btn-block btn-primary">
+        <a href="/profile" class="btn btn-block btn-default">Cancel</a>
     </form>
 </div>
 </body>
