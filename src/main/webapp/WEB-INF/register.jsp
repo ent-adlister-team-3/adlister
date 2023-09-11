@@ -58,14 +58,12 @@
         }
     </script>
 
-    <link rel="icon" type="image/x-icon" href="../img/favicon-16x16.png">
-
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.png">
 
 </head>
 <body>
 <header>
-<%--    <jsp:include page="partials/navbar.jsp"/>--%>
-<%--    Ask Steve or billlyyyyyyy--%>
+
 
 </header>
 <div class="">
@@ -75,7 +73,9 @@
         </div>
         <div class="col-4 py-5">
 
+
             <h1 class="text-center"><strong>Sign Up</strong></h1>
+
             <form action="/register" method="post" onsubmit="return validateForm()">
                 <div class="form-group mb-4 ">
                     <label for="username" >Username</label> <br>
@@ -105,13 +105,13 @@
                            placeholder="Enter Phone Number...">
                     <span id="phoneNumberError" class="text-danger"></span>
                 </div>
-
-                <input type="submit" class="btn btn-primary btn-block custom-registration-button">
+                <div class="py-3">
+                    <input type="submit" class="btn btn-primary btn-block custom-registration-button">
+                </div>
             </form>
             <div>
-               <p> Already Have an Account? <a class="nav-link" href="/login">Login</a></p>
+               <p> Already Have an Account? <a class="link-primary link-opacity-100 link-opacity-50-hover" href="/login">Login</a></p>
             </div>
-
         </div>
     </div>
 </div>

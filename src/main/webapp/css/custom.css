@@ -44,3 +44,25 @@
         background-position: 100%;
     }
 }
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.5); /* Change the color and opacity here */
+    opacity: 0; /* Initially, make it fully transparent */
+    transition: opacity 0.3s ease; /* Add a smooth transition effect */
+}
+
+.image-container:hover::before {
+    opacity: 1; /* When hovering over the container, make the overlay visible */
+}
