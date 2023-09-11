@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- 1 row Navbar--%>
-<nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar">
+<nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar shadow">
 <%--<nav class="navbar navbar-expand-lg shadow navbar-light bg-light color-cycling-navbar">--%>
     <img src="/img/icons.png" class="mx-4" alt="ppg" style="max-height: 40px; width: auto; display: block; margin: 0 auto">
-    <a class="navbar-brand" href="/">Puff Clothing</a>
+    <a class="navbar-brand font-size" href="/">Puff Clothing</a>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,12 +43,32 @@
 <%--                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>--%>
                 </c:when>
                 <c:otherwise>
-                    <li class="nav-item"><a class="nav-link" href="/profile" style="margin-right: 16px">Profile</a></li>
+                    <li class="nav-item" id="profileNavItem" ><a class="nav-link" href="/profile" style="margin-right: 16px">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="/logout" style="margin-right: 24px">Logout</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>
     </div>
+
+<%--    //TODO: In the Profile page hide the "Profile" button--%>
+
+<%--    <ul class="navbar-nav ms-auto ">--%>
+<%--        <c:choose>--%>
+<%--            <c:when test="${empty sessionScope.user}">--%>
+<%--                <!-- Login button here -->--%>
+<%--            </c:when>--%>
+<%--            <c:otherwise>--%>
+<%--                <c:if test="${not pageContext.request.requestURI.equals('/profile.jsp')}">--%>
+<%--                    <li class="nav-item">--%>
+<%--                        <a class="nav-link" href="/profile" style="margin-right: 16px">Profile</a>--%>
+<%--                    </li>--%>
+<%--                </c:if>--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" href="/logout" style="margin-right: 24px">Logout</a>--%>
+<%--                </li>--%>
+<%--            </c:otherwise>--%>
+<%--        </c:choose>--%>
+<%--    </ul>--%>
 
 </nav>
 

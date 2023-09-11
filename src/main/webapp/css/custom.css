@@ -141,6 +141,10 @@ body {
     object-fit: cover;
 }
 
+.font-size{
+    font-size: 1.5rem;
+    font-weight: bold;
+
 .horizontal-line {
     border-top: 1px solid #FF3170FF;
     margin-top: 10px;
