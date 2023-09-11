@@ -58,23 +58,24 @@
         }
     </script>
 
+    <link rel="icon" type="image/x-icon" href="../img/favicon-16x16.png">
+
 
 </head>
 <body>
 <header>
-    <jsp:include page="partials/navbar.jsp"/>
+<%--    <jsp:include page="partials/navbar.jsp"/>--%>
 <%--    Ask Steve or billlyyyyyyy--%>
-    <link rel="icon" type="" href="img/favicon.ico.img">
 
 </header>
-<div class="container">
+<div class="">
     <div class="row">
         <div class="col-8">
-
+            <jsp:include page="/WEB-INF/partials/carosuel.jsp" />
         </div>
         <div class="col-4 py-5">
 
-            <h1>Sign Up</h1>
+            <h1 class="text-center"><strong>Sign Up</strong></h1>
             <form action="/register" method="post" onsubmit="return validateForm()">
                 <div class="form-group mb-4 ">
                     <label for="username" >Username</label> <br>
@@ -113,6 +114,9 @@
 
         </div>
     </div>
+</div>
+<div>
+    <jsp:include page="/WEB-INF/partials/script.jsp" />
 </div>
 </body>
 </html>

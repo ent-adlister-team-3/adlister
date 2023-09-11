@@ -10,6 +10,37 @@
     text-align: center;
 }
 
-.test{
-    color: aquamarine;
+.search-inc{
+    width: 30rem!important;
+}
+
+.pill-search{
+    border-radius: 4rem 0 0 4rem !important;
+    background-color: rgba(248, 249, 250, 0.48) !important;
+
+}
+
+.tryThisOut {
+
+    border-radius: 0 4rem 4rem 0;
+
+}
+
+.color-cycling-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Adjust the height as needed */
+    background: linear-gradient(90deg, #33ACE3, #98DAF1, #EA6964, #E78C89, #4AB62C, #81CB71); /* Set your six background colors */
+    background-size: 600% 100%; /* Adjust the background size based on the number of colors */
+    animation: gradientAnimation 10s linear infinite; /* Adjust the animation duration as needed */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 100%;
+    }
 }

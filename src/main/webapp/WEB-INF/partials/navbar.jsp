@@ -1,26 +1,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- 1 row Navbar--%>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/ads">Puff Clothing</a>
+<nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar">
+<%--<nav class="navbar navbar-expand-lg shadow navbar-light bg-light color-cycling-navbar">--%>
+    <a class="navbar-brand mx-4" href="/ads">Puff Clothing</a>
+    <img src="/img/icons.png" class="mx-4" alt="ppg" style="max-height: 40px; width: auto; display: block; margin: 0 auto">
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <c:if test="${pageContext.request.requestURI == '/WEB-INF/ads/index.jsp'}">
 
+<%--    Pill search button--%>
+<%--    Needs tp be centered (its currently above)--%>
+    <c:if test="${pageContext.request.requestURI == '/WEB-INF/ads/index.jsp'}">
         <form>
-            <div class="input-group">
-                <input type="text" class="form-control" id="searchQuery" placeholder="Search for Clothes" onkeyup="filterAds()">
+            <div class="input-group search-inc mx-4 px-4">
+                <input type="text" class="form-control pill-search" id="searchQuery" placeholder="Search for Clothes" onkeyup="filterAds()">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" onclick="filterAds()">Search</button>
+                    <button class="btn btn-outline-secondary tryThisOut" type="button" onclick="filterAds()">Search</button>
                 </div>
             </div>
         </form>
-
     </c:if>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto ">
             <c:choose>
                 <c:when test="${empty sessionScope.user}">
                     <li class="nav-item">
@@ -34,9 +38,8 @@
                             Login
                         </a>
                     </li>
-
-
-                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+<%--                    register button is getting removed Ava is going to put it in the home page "hero"--%>
+<%--                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>--%>
                 </c:when>
                 <c:otherwise>
                     <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>

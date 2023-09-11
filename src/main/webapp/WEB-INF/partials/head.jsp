@@ -9,3 +9,5 @@
     }
 </style>
 <link rel="stylesheet" href="/css/custom.css">
+<link rel="icon" type="image/x-icon" href="../img/favicon-16x16.png">
+
