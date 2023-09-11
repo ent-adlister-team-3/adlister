@@ -28,7 +28,7 @@
                     <input id="password" name="password" class="form-control search-opa " type="password" placeholder="Bubble, Buttercup, Blossom">
                 </div>
                 <div>
-                    <input type="submit" class="btn btn-primary btn-block custom-registration-button shadow" value="Log In">
+                    <input type="submit" class="btn btn-primary btn-block custom-registration-button shadow wbd" value="Log In">
 
                 </div>
             </form>
