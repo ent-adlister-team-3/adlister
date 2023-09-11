@@ -53,20 +53,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fdeaf6 !important;
     height: 60px; /* Adjust the height as needed */
-    background: linear-gradient(90deg, #33ACE3, #98DAF1, #EA6964, #E78C89, #4AB62C, #81CB71); /* Set your six background colors */
-    background-size: 600% 100%; /* Adjust the background size based on the number of colors */
-    animation: gradientAnimation 10s linear infinite; /* Adjust the animation duration as needed */
+    /*background: linear-gradient(90deg, #33ACE3, #98DAF1, #EA6964, #E78C89, #4AB62C, #81CB71); !* Set your six background colors *!*/
+    /*background-size: 600% 100%; !* Adjust the background size based on the number of colors *!*/
+    /*animation: gradientAnimation 10s linear infinite; !* Adjust the animation duration as needed *!*/
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0;
-    }
-    100% {
-        background-position: 100%;
-    }
-}
+/*@keyframes gradientAnimation {*/
+/*    0% {*/
+/*        background-position: 0;*/
+/*    }*/
+/*    100% {*/
+/*        background-position: 100%;*/
+/*    }*/
+/*}*/
 
 
 .image-container {
@@ -99,9 +100,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-
 }
 
 .card-row {
@@ -137,6 +135,13 @@
     right: 10px;
     height: 25px;
     width: 150px;
+    color: white;
+    background-color: #ff002d2b;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #ff4867;
 }
 
 .ad-title {
@@ -144,7 +149,7 @@
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: white;
+    /*background-color: white;*/
 }
 
 body {
@@ -216,4 +221,9 @@ textarea {
 
 .btn-edit:hover {
     background-color: #ff4867;
+}
+
+.card-size{
+    height: 35rem;
+    width: 35rem;
 }
