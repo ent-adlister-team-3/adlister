@@ -24,32 +24,29 @@
                 <br>
                 <form action="/editUser" method="GET">
                     <input type="hidden" name="editId" value="${sessionScope.user.getId()}">
-                    <button type="submit">Edit</button>
+                    <button type="submit">Edit your profile</button>
                 </form>
             </div>
 
-            <div>
-                <form action="/ads/create" method="GET">
-                    <button type="submit">Create New Ad</button>
-                </form>
-            </div>
+            <div class="horizontal-line pt-2 mt-2"></div>
+
 
             <div class="">
-                <h1>Create a new Ad</h1>
+                <h1 class="text-center">Create a new Post</h1>
                 <form action="/ads/create" method="post">
-                    <div class="form-group">
+                    <div class="form-group mb-4 mt-2">
                         <label for="title">Title</label>
-                        <input id="title" name="title" class="form-control" type="text">
+                        <input id="title" name="title" class="form-control search-opa" type="text" placeholder="Enter Title...">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-4">
                         <label for="description">Description</label>
-                        <textarea id="description" name="description" class="form-control" type="text"></textarea>
+                        <textarea id="description" name="description" class="form-control search-opa" type="text" placeholder="Enter Brief Description..."></textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-4">
                         <label for="price">Price</label>
-                        <input id="price" name="price" class="form-control" type="text">
+                        <input id="price" name="price" class="form-control search-opa" type="text" placeholder="1-9999999">
                     </div>
-                    <input type="submit" class="btn btn-block btn-primary">
+                    <input type="submit" class="btn btn-block btn-primary mt-3">
                     <a href="/profile" class="btn btn-block btn-default">Cancel</a>
                 </form>
             </div>
@@ -66,7 +63,7 @@
                             <div class="row">
                                 <c:forEach var="ad" items="${userAds}">
                                     <div class="col-4"> <!-- Adjust the column width as needed -->
-                                        <div class="card mb-3">
+                                        <div class="card shadow mb-3">
                                                 <%-- <img class="card-img-top" src="..." alt="Card image cap"> --%>
                                             <div class="card-body">
                                                 <h5 class="card-title">Ad Title: ${ad.title} <br></h5>

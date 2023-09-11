@@ -109,3 +109,26 @@ body {
     object-fit: cover;
 }
 
+.horizontal-line {
+    border-top: 1px solid #FF3170FF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    border-radius: 2rem;
+    width: 100%;
+    border: none;
+}
+
+.mb-3 {
+    background-color: #ffafbd;
+    border: unset;
+    transition: background-color 0.3s ease;
+}
+
+.mb-3:hover {
+    background-color: #ffafbd;
+}
+
+
