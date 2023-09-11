@@ -28,18 +28,23 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-
-<div class="container">
+<div class="page-wrapper">
     <h1>Here Are all the ads!</h1>
-    <c:forEach var="ad" items="${ads}">
-                <div class="ad-card col-md-6">
+    <div class="card-container">
+        <div class="card-row">
+
+            <c:forEach var="ad" items="${ads}">
+                <div class="ad-card">
                     <h2 class="ad-title">${ad.title}</h2>
                     <form action="/ads/details" method="GET">
                         <input class="ad-id" name="details" value="${ad.id}" type="hidden">
                         <button type="submit">Show more</button>
                     </form>
                 </div>
-    </c:forEach>
+            </c:forEach>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>
