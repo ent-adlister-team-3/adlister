@@ -29,6 +29,13 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="page-wrapper">
+    <div class="hero-container shadow">
+        <div class="image-text">
+            <h2>Shop Sustainably</h2>
+            <h2>Sell your old clothes</h2>
+            <h2>Save the planet</h2>
+        </div>
+    </div>
     <div class="card-container">
         <div class="card-row">
 
