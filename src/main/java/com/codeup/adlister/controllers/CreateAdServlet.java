@@ -25,6 +25,8 @@ public class CreateAdServlet extends HttpServlet {
 
     }
 
+//    Guard claus for price
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User loggedInUser = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
@@ -34,7 +36,7 @@ public class CreateAdServlet extends HttpServlet {
                 Double.parseDouble(request.getParameter("price"))
         );
         DaoFactory.getAdsDao().insert(ad);
-        response.sendRedirect("/");
+        response.sendRedirect("/profile");
     }
 
 
