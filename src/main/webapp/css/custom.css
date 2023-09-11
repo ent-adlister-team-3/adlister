@@ -212,3 +212,7 @@ textarea {
 .btn-edit:hover {
     background-color: #ff4867;
 }
+
+.card-size{
+    height: 35rem;
+}
