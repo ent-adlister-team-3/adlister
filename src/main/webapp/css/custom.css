@@ -23,7 +23,7 @@
 }
 
 .wbd{
-    width: 90%;
+    width: 100%;
 }
 
 .btn-primary{
@@ -223,6 +223,19 @@ textarea {
 }
 
 .card-size{
-    height: 35rem;
-    width: 35rem;
+    height: 100%;
+    width: 100%;
+}
+
+input#username {
+    width: 100%;
+}
+
+input#password{
+    width: 100%;
+}
+
+input.btn.btn-primary.btn-block.custom-registration-button.shadow {
+    margin-top: 3rem;
+    width: 100%;
 }
