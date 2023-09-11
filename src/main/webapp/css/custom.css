@@ -226,3 +226,27 @@ textarea {
     height: 35rem;
     width: 35rem;
 }
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-self: center;
+    width: 1200px;
+    min-height: 550px;
+    background-image: url("../img/the-powerpuff-girls.webp");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}

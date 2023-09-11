@@ -12,11 +12,11 @@
 <form action="/editUser" method="POST">
     <input type="hidden" name="editId" value="${user.id}">
     <label for="username">Username:</label>
-    <input type="text" name="username" value="${user.username}" required><br>
+    <input id="username" type="text" name="username" value="${user.username}" required><br>
     <label for="email">Email:</label>
-    <input type="email" name="email" value="${user.email}" required><br>
+    <input id="email" type="email" name="email" value="${user.email}" required><br>
     <label for="password">Password:</label>
-    <input type="password" name="password" value="${user.password}" required><br>
+    <input id="password" type="password" name="password" required><br>
     <button type="submit">Save</button>
 </form>
 <a href="/profile">Cancel</a>
