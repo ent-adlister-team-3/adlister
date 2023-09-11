@@ -35,16 +35,18 @@
 
             <c:forEach var="ad" items="${ads}">
                 <div class="ad-card">
-                    <h2 class="ad-title">${ad.title}</h2>
+                    <div class="ad-title">
+                        <h2>${ad.title}</h2>
+                    </div>
                     <form action="/ads/details" method="GET">
                         <input class="ad-id" name="details" value="${ad.id}" type="hidden">
-                        <button type="submit">Show more</button>
+                        <button class="details-btn" type="submit">Show more</button>
                     </form>
                 </div>
             </c:forEach>
         </div>
     </div>
 </div>
-</div>
+
 </body>
 </html>
