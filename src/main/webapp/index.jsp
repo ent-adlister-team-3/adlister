@@ -29,12 +29,11 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="page-wrapper">
-    <h1>Here Are all the ads!</h1>
     <div class="card-container">
         <div class="card-row">
 
             <c:forEach var="ad" items="${ads}">
-                <div class="ad-card">
+                <div class="ad-card shadow">
                     <div class="ad-title">
                         <h2>${ad.title}</h2>
                     </div>
