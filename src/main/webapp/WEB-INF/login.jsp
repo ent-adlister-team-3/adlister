@@ -29,7 +29,6 @@
                 </div>
                 <div class="wbd">
                     <input type="submit" class="btn btn-primary btn-block custom-registration-button shadow" value="Log In">
-
                 </div>
             </form>
         </div>

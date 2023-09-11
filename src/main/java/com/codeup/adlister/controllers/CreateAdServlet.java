@@ -34,7 +34,7 @@ public class CreateAdServlet extends HttpServlet {
                 Double.parseDouble(request.getParameter("price"))
         );
         DaoFactory.getAdsDao().insert(ad);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/");
     }
 
 
