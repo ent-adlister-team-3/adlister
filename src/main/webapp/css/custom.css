@@ -14,6 +14,21 @@
     width: 30rem!important;
 }
 
+.search-opa{
+    background-color: rgba(248, 249, 250, 0.48) !important;
+}
+
+.btn-primary{
+    --bs-btn-bg: #FC5A8C;
+    --bs-btn-border-color: unset!important;
+    --bs-btn-hover-bg: #FF3170FF;
+}
+
+.link-pink{
+    color: #ff8197;
+
+}
+
 .pill-search{
     border-radius: 4rem 0 0 4rem !important;
     background-color: rgba(248, 249, 250, 0.48) !important;
@@ -65,4 +80,8 @@
 
 .image-container:hover::before {
     opacity: 1; /* When hovering over the container, make the overlay visible */
+}
+
+body {
+    background: #FDBCCD!important;
 }
