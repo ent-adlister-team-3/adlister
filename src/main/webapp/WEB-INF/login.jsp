@@ -8,19 +8,33 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Please Log In</h1>
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+
+
+    <div class="row">
+        <div class="col-4 px-5 mx-2 my-5">
+            <h1 class="text-center"><strong>Log In</strong></h1>
+            <div class="my-4">
+                <p>Don't have an account yet? <a class="link-primary link-opacity-100 link-opacity-50-hover" href="/register">Sign Up Now!</a></p>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password">
-            </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In">
-        </form>
+            <form action="/login" method="POST">
+                <div class="form-group mb-4">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" class="form-control" type="text" placeholder="PowerPuffGirls">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" class="form-control" type="password" placeholder="Bubble, Buttercup, Blossom">
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary btn-block custom-registration-button" value="Log In">
+
+                </div>
+            </form>
+        </div>
+        <div class="col-8">
+
+        </div>
     </div>
+
 </body>
 </html>
