@@ -23,7 +23,7 @@
 }
 
 .wbd{
-    width: 90%;
+    width: 100%;
 }
 
 .btn-primary{
@@ -100,7 +100,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
 }
 
 .card-row {
@@ -110,6 +109,8 @@
     /*padding: 0 20px;*/
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+
 }
 
 .ad-card {
@@ -250,3 +251,20 @@ textarea {
     text-align: center;
     border-radius: 5px;
 }
+    height: 100%;
+    width: 100%;
+}
+
+input#username {
+    width: 100%;
+}
+
+input#password{
+    width: 100%;
+}
+
+input.btn.btn-primary.btn-block.custom-registration-button.shadow {
+    margin-top: 3rem;
+    width: 100%;
+}
+
