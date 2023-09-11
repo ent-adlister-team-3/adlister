@@ -4,18 +4,21 @@
     <%--<nav class="navbar navbar-expand-lg shadow navbar-light bg-light color-cycling-navbar">--%>
     <img src="/img/icons.png" class="mx-4" alt="ppg"
          style="max-height: 40px; width: auto; display: block; margin: 0 auto">
-    <a class="navbar-brand font-size" href="/"><%
-        String currentURI = request.getRequestURI();
-        if (currentURI.endsWith("/profile.jsp")) {
-    %>
-        Main Page
-        <%
-        } else {
-        %>
-        Puff Clothing
-        <%
-            }
-        %></a>
+    <a class="navbar-brand font-size" href="/">
+        <c:choose>
+            <c:when test="${pageContext.request.requestURI.endsWith('/profile.jsp')}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-backward" viewBox="0 0 16 16">
+                    <path d="M.5 3.5A.5.5 0 0 1 1 4v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v2.94l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L8.5 8.752v2.94c0 .653-.713.998-1.233.696L1 8.752V12a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm7 1.133L1.696 8 7.5 11.367V4.633zm7.5 0L9.196 8 15 11.367V4.633z"/>
+                </svg>
+                Main Page</c:when>
+            <c:when test="${pageContext.request.requestURI.endsWith('/login.jsp')}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-backward" viewBox="0 0 16 16">
+                    <path d="M.5 3.5A.5.5 0 0 1 1 4v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v2.94l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L8.5 8.752v2.94c0 .653-.713.998-1.233.696L1 8.752V12a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm7 1.133L1.696 8 7.5 11.367V4.633zm7.5 0L9.196 8 15 11.367V4.633z"/>
+                </svg>
+                Main Page</c:when>
+            <c:otherwise>Puff Clothing</c:otherwise>
+        </c:choose>
+    </a>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -43,9 +46,10 @@
         <ul class="navbar-nav ms-auto ">
             <c:choose>
                 <c:when test="${empty sessionScope.user}">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login" style="margin-right: 24px">
-                             <span>
+                    <c:if test="${not pageContext.request.requestURI.endsWith('/login.jsp')}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login" style="margin-right: 24px">
+                                <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -54,9 +58,9 @@
                                       d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                                 </svg>
                                 </span>
-                            Login
-                        </a>
-                    </li>
+                                Login</a>
+                        </li>
+                    </c:if>
                     <%--                    register button is getting removed Ava is going to put it in the home page "hero"--%>
                     <%--                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>--%>
                 </c:when>
