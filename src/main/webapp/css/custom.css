@@ -14,6 +14,29 @@
     width: 30rem!important;
 }
 
+.search-opa{
+    background-color: rgba(248, 249, 250, 0.48) !important;
+    width: 90%;
+}
+.py-3.wbd {
+    width: 90%;
+}
+
+.wbd{
+    width: 90%;
+}
+
+.btn-primary{
+    --bs-btn-bg: #FC5A8C;
+    --bs-btn-border-color: unset!important;
+    --bs-btn-hover-bg: #FF3170FF;
+}
+
+.link-pink{
+    color: #ff8197;
+
+}
+
 .pill-search{
     border-radius: 4rem 0 0 4rem !important;
     background-color: rgba(248, 249, 250, 0.48) !important;
@@ -98,3 +121,45 @@
     margin-bottom: 40px;
     background-color: #81CB71;
 }
+
+body {
+    background: #FDBCCD!important;
+}
+
+.carousel.slide {
+    height: 100%;
+}
+.carousel .carousel-inner {
+    height: 100%;
+}
+.carousel .carousel-inner .carousel-item {
+    height: 100%;
+}
+
+.carousel .carousel-inner .carousel-item > img:first-of-type {
+    height: 100%;
+    object-fit: cover;
+}
+
+.horizontal-line {
+    border-top: 1px solid #FF3170FF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    border-radius: 2rem;
+    width: 100%;
+    border: none;
+}
+
+.mb-3 {
+    background-color: #ffafbd;
+    border: unset;
+    transition: background-color 0.3s ease;
+}
+
+.mb-3:hover {
+    background-color: #ffafbd;
+}
+

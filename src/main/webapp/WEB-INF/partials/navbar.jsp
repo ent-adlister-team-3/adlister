@@ -2,8 +2,9 @@
 <%-- 1 row Navbar--%>
 <nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar">
 <%--<nav class="navbar navbar-expand-lg shadow navbar-light bg-light color-cycling-navbar">--%>
-    <a class="navbar-brand mx-4" href="/">Puff Clothing</a>
     <img src="/img/icons.png" class="mx-4" alt="ppg" style="max-height: 40px; width: auto; display: block; margin: 0 auto">
+    <a class="navbar-brand" href="/">Puff Clothing</a>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,7 +14,7 @@
 <%--    Pill search button--%>
 <%--    Needs tp be centered (its currently above)--%>
     <c:if test="${pageContext.request.requestURI == '/index.jsp'}">
-        <form>
+        <form style="margin-bottom: 2px">
             <div class="input-group search-inc mx-4 px-4">
                 <input type="text" class="form-control pill-search" id="searchQuery" placeholder="Search for Clothes" onkeyup="filterAds()">
                 <div class="input-group-append">
@@ -28,7 +29,7 @@
             <c:choose>
                 <c:when test="${empty sessionScope.user}">
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">
+                        <a class="nav-link" href="/login" style="margin-right: 24px">
                              <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
@@ -42,8 +43,8 @@
 <%--                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>--%>
                 </c:when>
                 <c:otherwise>
-                    <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/profile" style="margin-right: 16px">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout" style="margin-right: 24px">Logout</a></li>
                 </c:otherwise>
             </c:choose>
         </ul>
