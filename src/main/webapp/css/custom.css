@@ -179,12 +179,36 @@ button {
 }
 
 .mb-3 {
+    height: 100%;
     background-color: #ffafbd;
     border: unset;
-    transition: background-color 0.3s ease;
+    border-radius: 2rem;
 }
 
-.mb-3:hover {
-    background-color: #ffafbd;
+.price-color {
+    background: #E78C89;
+
 }
 
+textarea {
+    resize: none;
+}
+
+.col-4 {
+    margin-bottom: 2rem;
+}
+
+.edit-profile-btn{
+    background-color: rgba(248, 249, 250, 0.58) !important;
+}
+
+.btn-edit {
+    width: 100%;
+    color: white;
+    background-color: #ff002d2b;
+    transition: background-color 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #ff4867;
+}
