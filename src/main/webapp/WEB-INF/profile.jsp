@@ -27,6 +27,11 @@
                 <button type="submit">Edit</button>
             </form>
         </div>
+        <div>
+            <form action="/ads/create" method="GET">
+                <button type="submit">Create New Ad</button>
+            </form>
+        </div>
     </div>
 </div>
 
