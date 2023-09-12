@@ -67,7 +67,6 @@
             </c:forEach>
         </div>
     </div>
-    <button class=
 </div>
 
 </body>
