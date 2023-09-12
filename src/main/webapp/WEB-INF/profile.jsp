@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -39,7 +40,6 @@
         }
 
     </script>
-
 
 
 </head>
@@ -151,8 +151,9 @@
                                     </div>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item price-color text-center"><strong>Price</strong>:
-                                        $${ad.price}</li>
+                                    <li class="list-group-item price-color text-center">Price:
+                                        $<fmt:formatNumber value="${ad.price}" type="number" minFractionDigits="2" maxFractionDigits="2"/>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
