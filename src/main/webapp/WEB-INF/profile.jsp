@@ -10,13 +10,25 @@
     <script>
         function validateForm() {
             let price = document.getElementById("price").value;
+            let title = document.getElementById("title").value;
+
             let priceError = document.getElementById("priceError");
+            let titleError = document.getElementById("titleError");
+
             priceError.textContent = "";
+            titleError.textContent = "";
+
+            if (title === "") {
+                titleError.textContent = "Please enter a Title.";
+                return false
+            }
 
             if (price === "") {
                 priceError.textContent = "Please enter a number.";
                 return false;
             }
+
+
 
             // Check if the input is a valid number using a regular expression
             if (!/^\d+$/.test(price)) {
@@ -41,7 +53,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4 py-5">
-            <div class="">
+            <div>
                 <h1><strong>Welcome,<br>${sessionScope.user.username}!</strong></h1>
             </div>
             <div class="">
@@ -71,7 +83,8 @@
                         <label for="title">Title</label>
                         <input id="title" name="title" class="form-control search-opa" type="text"
                                placeholder="Enter Title...">
-                    </div>
+                        <span id="titleError" class="text-danger"></span>
+                </div>
                     <div class="form-group mb-4">
                         <label for="description">Description</label>
                         <textarea id="description" name="description" class="form-control search-opa" type="text"
