@@ -8,10 +8,24 @@
     </jsp:include>
 
     <script>
-        let price = document.getElementById("price").value;
-        let priceError = document.getElementById("priceError");
-        priceError.textContent = "";
+        function validateForm() {
+            let price = document.getElementById("price").value;
+            let priceError = document.getElementById("priceError");
+            priceError.textContent = "";
 
+            if (price === "") {
+                priceError.textContent = "Please enter a number.";
+                return false;
+            }
+
+            // Check if the input is a valid number using a regular expression
+            if (!/^\d+$/.test(price)) {
+                priceError.textContent = "Please enter a valid number.";
+                return false;
+            }
+
+            return true;
+        }
 
     </script>
 
@@ -52,8 +66,8 @@
             <br>
             <div>
                 <h1><strong>Create a new Post</strong></h1>
-                <form action="/ads/create" method="post">
-                    <div class="form-group mb-4 mt-2">
+                <form action="/ads/create" method="post" onsubmit="return validateForm()">
+                <div class="form-group mb-4 mt-2">
                         <label for="title">Title</label>
                         <input id="title" name="title" class="form-control search-opa" type="text"
                                placeholder="Enter Title...">
