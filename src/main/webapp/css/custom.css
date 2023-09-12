@@ -395,5 +395,14 @@ input.btn.btn-primary.btn-block.custom-registration-button.shadow {
 .r-text {
     color: #ffffff;
     font-size: 3rem;
+    text-shadow: 2px 2px 2px #000
 }
+
+.open-sans-text{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+
+
 

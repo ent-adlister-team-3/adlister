@@ -25,19 +25,38 @@ public class CreateAdServlet extends HttpServlet {
 
     }
 
-//    Guard claus for price
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User loggedInUser = (User) request.getSession().getAttribute("user");
-        Ad ad = new Ad(
-                loggedInUser.getId(),
-                request.getParameter("title"),
-                request.getParameter("description"),
-                Double.parseDouble(request.getParameter("price"))
-        );
-        DaoFactory.getAdsDao().insert(ad);
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        User loggedInUser = (User) request.getSession().getAttribute("user");
+//        Ad ad = new Ad(
+//                loggedInUser.getId(),
+//                request.getParameter("title"),
+//                request.getParameter("description"),
+//                Double.parseDouble(request.getParameter("price"))
+//        );
+//        DaoFactory.getAdsDao().insert(ad);
+//        response.sendRedirect("/profile");
+//    }
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    User loggedInUser = (User) request.getSession().getAttribute("user");
+    String title = request.getParameter("title");
+    String description = request.getParameter("description");
+    String priceStr = request.getParameter("price");
+
+    double price;
+    try {
+        price = Double.parseDouble(priceStr);
+    } catch (NumberFormatException e) {
+
         response.sendRedirect("/profile");
+        return;
     }
+
+    Ad ad = new Ad(loggedInUser.getId(), title, description, price);
+    DaoFactory.getAdsDao().insert(ad);
+    response.sendRedirect("/profile");
+}
+
 
 
 }
