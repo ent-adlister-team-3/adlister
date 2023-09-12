@@ -18,22 +18,27 @@
                     <form action="/editUser" method="POST">
                         <div class="form-group mb-4">
                             <input type="hidden" name="editId" value="${user.id}">
+                        </div>
+                        <div class="form-group mb-4">
                             <label for="username">Username:</label>
+                            <input id="username" type="text" name="username" class="form-control wbd" value="${user.username}" required>
                         </div>
+                        <br>
                         <div class="form-group mb-4">
-                            <input type="text" name="username" class="form-control search-opa" value="${user.username}" required><br>
                             <label for="email">Email:</label>
+                            <input id="email" type="email" name="email" class="form-control wbd" value="${user.email}" required>
                         </div>
+                        <br>
                         <div class="form-group mb-4">
-                            <input type="email" name="email" class="form-control search-opa" value="${user.email}" required><br>
                             <label for="password">Password:</label>
+                            <input id="password" type="password" name="password" class="form-control wbd" required>
                         </div>
+                        <br>
                         <div class="form-group mb-4">
-                            <input type="password" name="password" class="form-control search-opa" value="${user.password}" required><br>
-                            <button type="submit"class="btn btn-primary btn-block custom-registration-button shadow">Save</button>
+                            <button type="submit" class="btn btn-primary btn-block custom-registration-button shadow">Save</button>
                         </div>
                     </form>
-                    <a href="/profile">Cancel</a>
+                    <a class="link-pink link-opacity-100 link-opacity-50-hover" href="/profile">Cancel</a>
                 </div>
             </div>
         </div>
