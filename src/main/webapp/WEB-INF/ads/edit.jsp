@@ -43,6 +43,7 @@
         </div>
     </div>
 </div>
+
 <script>
     function validateForm() {
         let title = document.getElementById("title").value;
@@ -54,9 +55,9 @@
             return false; // Prevent form submission
         }
 
-        // Check if the price contains only numbers
-        if (!/^\d+$/.test(price)) {
-            alert("Price must contain numbers only.");
+        // Check if the price is in the correct format (two decimal numbers)
+        if (!/^\d+(\.\d{2})?$/.test(price)) {
+            alert("Price must be in the format xx.xx (two decimal numbers).");
             return false; // Prevent form submission
         }
 
