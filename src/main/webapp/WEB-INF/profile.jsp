@@ -78,25 +78,39 @@
             <div>
                 <h1><strong>Create a new Post</strong></h1>
                 <form action="/ads/create" method="post" onsubmit="return validateForm()">
-                <div class="form-group mb-4 mt-2">
+                    <div class="form-group mb-4 mt-2">
                         <label for="title">Title</label>
-                        <input id="title" name="title" class="form-control search-opa" type="text"
-                               placeholder="Enter Title...">
+                        <input id="title" name="title" class="form-control search-opa" type="text" placeholder="Enter Title...">
                         <span id="titleError" class="text-danger"></span>
-                </div>
+                    </div>
                     <div class="form-group mb-4">
                         <label for="description">Description</label>
-                        <textarea id="description" name="description" class="form-control search-opa" type="text"
-                                  placeholder="Enter Brief Description..."></textarea>
+                        <textarea id="description" name="description" class="form-control search-opa" type="text" placeholder="Enter Brief Description..."></textarea>
                     </div>
                     <div class="form-group mb-4">
                         <label for="price">Price</label>
-                        <input id="price" name="price" class="form-control search-opa" type="text" placeholder="1-9999999">
-                        <p id="priceError" class="text-danger"></p>
+                        <input id="price" name="price" class="form-control search-opa" type="text" step=".01" placeholder="0.00">
+                        <p id="error" class="text-danger"></p>
                     </div>
 
                     <input type="submit" class="btn btn-block btn-primary mt-3">
                 </form>
+
+                <script>
+                    function validateForm() {
+                        const input = document.getElementById('price');
+                        const error = document.getElementById('error');
+                        const value = input.value;
+
+                        if (/^\d*\.?\d{0,2}$/.test(value)) {
+                            error.textContent = '';
+                            return true; // Form will submit
+                        } else {
+                            error.textContent = 'Please enter a valid double with up to two decimal places.';
+                            return false; // Form won't submit
+                        }
+                    }
+                </script>
             </div>
         </div>
 
