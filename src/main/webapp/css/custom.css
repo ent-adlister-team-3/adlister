@@ -403,6 +403,13 @@ input.btn.btn-primary.btn-block.custom-registration-button.shadow {
     font-weight: 600;
 }
 
+.details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff8197;
+}
+
 
 
 
