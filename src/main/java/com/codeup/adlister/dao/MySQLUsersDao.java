@@ -61,14 +61,12 @@ public class MySQLUsersDao implements Users {
         if (!rs.next()) {
             return null;
         }
-//        String formattedPhoneNumber = formatPhoneNumber(rs.getString("phone_number"));
         return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("email"),
                 rs.getString("password"),
                 rs.getString("phone_number")
-//                formattedPhoneNumber
         );
     }
 
@@ -84,13 +82,14 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public void editUser(User user) {
+        String query = "UPDATE users SET username = ?, email = ?, password = ?, phone_number = ? WHERE id = ?";
         try {
-            String query = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
-            stmt.setLong(4, user.getId());
+            stmt.setString(4, user.getPhoneNumber());
+            stmt.setLong(5, user.getId());
             stmt.executeUpdate();
         } catch (Exception e) {
             // Handle errors
@@ -140,15 +139,4 @@ public class MySQLUsersDao implements Users {
         }
         return users;
     }
-
-//    private String formatPhoneNumber(String phoneNumber) {
-//        if (phoneNumber == null || phoneNumber.length() != 10) {
-//            return "Invalid number";
-//        }
-//        String areaCode = phoneNumber.substring(0, 3);
-//        String centralOfficeCode = phoneNumber.substring(3, 6);
-//        String stationCode = phoneNumber.substring(6);
-//        return "(" + areaCode + ") " + centralOfficeCode + "-" + stationCode;
-//    }
-
 }
