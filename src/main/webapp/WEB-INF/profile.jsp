@@ -5,6 +5,9 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
+
+
+
 </head>
 <body>
 
@@ -36,8 +39,10 @@
                 </form>
             </div>
 
-            <div class="horizontal-line pt-2 mt-2"></div>
 
+            <br>
+            <div class="horizontal-line pt-2 mt-2"></div>
+            <br>
 
             <div class="">
                 <h1><strong>Create a new Post</strong></h1>
@@ -66,6 +71,9 @@
 
 
         <div class="col-8 py-5">
+            <div class="centerText center-text mb-5">
+                <h2 class="center-text"><strong>Here are you current posts!</strong></h2>
+            </div>
             <article>
                 <div class="row">
                     <c:forEach var="ad" items="${userAds}">

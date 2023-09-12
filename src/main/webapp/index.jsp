@@ -10,13 +10,16 @@
         function filterAds() {
             let searchQuery = document.getElementById("searchQuery").value.toLowerCase();
             let ads = document.getElementsByClassName("ad-card");
+            let heroContainer = document.getElementById("hero-container");
 
-            console.log("Search Query:", searchQuery); // Log the search query
-            console.log("Number of Ads:", ads.length); // Log the number of ads
+            if (searchQuery.trim() === "") {
+                heroContainer.classList.remove("hide-hero");
+            } else {
+                heroContainer.classList.add("hide-hero");
+            }
 
             for (let i = 0; i < ads.length; i++) {
                 let adTitle = ads[i].getElementsByClassName("ad-title")[0].innerText.toLowerCase();
-                console.log("Ad Title:", adTitle); // Log each ad title
                 if (adTitle.includes(searchQuery)) {
                     ads[i].style.display = "block";
                 } else {
@@ -29,6 +32,25 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="page-wrapper">
+    <div class="hero-container" id="hero-container">
+        <div class="image-text-1 shadow">
+            <h2>Shop Sustainably</h2>
+        </div>
+        <div class="image-text-2 shadow">
+            <h2>Sell your old clothes</h2>
+        </div>
+        <div class="image-text-3 shadow">
+            <h2>Save the planet</h2>
+        </div>
+        <form action="/register" method="GET">
+            <input name="register" type="hidden">
+            <button class="register-btn shadow" type="submit">Sign up now!
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </form>
+    </div>
     <div class="card-container">
         <div class="card-row">
 

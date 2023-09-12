@@ -79,29 +79,29 @@
             <form action="/register" method="post" onsubmit="return validateForm()">
                 <div class="form-group mb-4 ">
                     <label for="username" >Username</label> <br>
-                    <input id="username" name="username" class="form-control search-opa" type="text" placeholder="Enter Username...">
+                    <input id="username" name="username" class="form-control search-opa-R" type="text" placeholder="Enter Username...">
                     <span id="usernameError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
                     <label for="email">Email</label>
-                    <input id="email" name="email" class="form-control search-opa" type="text" placeholder="Enter Email...">
+                    <input id="email" name="email" class="form-control search-opa-R" type="text" placeholder="Enter Email...">
                     <span id="emailError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4 ">
                     <label for="password">Password</label><br>
-                    <input id="password" name="password" class="form-control search-opa" type="password"
+                    <input id="password" name="password" class="form-control search-opa-R" type="password"
                            placeholder="Enter Password...">
                     <span id="passwordError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
                     <label for="confirm_password" >Confirm Password</label><br>
-                    <input id="confirm_password" name="confirm_password" class="form-control search-opa" type="password"
+                    <input id="confirm_password" name="confirm_password" class="form-control search-opa-R" type="password"
                            placeholder="Re-Enter Password...">
                     <span id="confirmPasswordError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
                     <label for="phoneNumber">Phone Number</label><br>
-                    <input id="phoneNumber" name="phoneNumber" class="form-control search-opa" type="text"
+                    <input id="phoneNumber" name="phoneNumber" class="form-control search-opa-R" type="text"
                            placeholder="Enter Phone Number...">
                     <span id="phoneNumberError" class="text-danger"></span>
                 </div>
