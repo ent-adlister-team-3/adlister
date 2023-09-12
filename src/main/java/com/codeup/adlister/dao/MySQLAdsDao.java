@@ -13,18 +13,6 @@ public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
 
-    public MySQLAdsDao(Config config) {
-        try {
-            DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(
-                    config.getUrl(),
-                    config.getUser(),
-                    config.getPassword()
-            );
-        } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to the database!", e);
-        }
-    }
     @Override
     public List<Ad> all() {
         PreparedStatement stmt = null;
@@ -75,15 +63,6 @@ public class MySQLAdsDao implements Ads {
             e.printStackTrace(); // Handle the exception appropriately
         }
         return null; // Return null if no ad with the given ID was found
-    }
-    private Ad extractAd(ResultSet rs) throws SQLException {
-        return new Ad(
-                rs.getLong("id"),
-                rs.getLong("user_id"),
-                rs.getString("title"),
-                rs.getString("description"),
-                rs.getDouble("price")
-        );
     }
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
@@ -166,6 +145,26 @@ public class MySQLAdsDao implements Ads {
         return userAds;
     }
 
-
+    private Ad extractAd(ResultSet rs) throws SQLException {
+        return new Ad(
+                rs.getLong("id"),
+                rs.getLong("user_id"),
+                rs.getString("title"),
+                rs.getString("description"),
+                rs.getDouble("price")
+        );
+    }
+    public MySQLAdsDao(Config config) {
+        try {
+            DriverManager.registerDriver(new Driver());
+            connection = DriverManager.getConnection(
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException("Error connecting to the database!", e);
+        }
+    }
 
 }
