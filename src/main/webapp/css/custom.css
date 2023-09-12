@@ -407,7 +407,17 @@ input.btn.btn-primary.btn-block.custom-registration-button.shadow {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 950px;
+    height: 500px;
+    padding-top: 20px;
     background-color: #ff8197;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 }
 
 

@@ -39,7 +39,6 @@ public class EditUserServlet extends HttpServlet {
 
     }
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String hash = BCrypt.hashpw(req.getParameter("password"), BCrypt.gensalt());
