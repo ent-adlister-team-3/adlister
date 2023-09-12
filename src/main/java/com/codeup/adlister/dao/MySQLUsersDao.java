@@ -70,6 +70,16 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    private User formatUser(ResultSet rs) throws SQLException {
+        return new User(
+                rs.getLong("id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getString("phone_number")
+        );
+    }
+
     @Override
     public void editUser(User user) {
         try {
@@ -105,7 +115,7 @@ public class MySQLUsersDao implements Users {
     private List<User> createUsersFromResults(ResultSet rs) throws SQLException {
         List<User> users = new ArrayList<>();
         while (rs.next()) {
-            users.add(extractUser(rs));
+            users.add(formatUser(rs));
         }
         return users;
     }
