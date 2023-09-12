@@ -30,11 +30,11 @@
             <h1>${adDetails.getTitle()}</h1>
             <p>${adDetails.getDescription()}</p>
             <p>${adDetails.getPrice()}</p>
-            <p>Contact the Seller:</p>
+            <p>Contact the Seller: ${}</p>
             <c:choose>
-                <c:when test="${empty users}">
+                <c:if test="${empty users}">
                     <p>Sorry, no users found</p>
-                </c:when>
+                </c:if>
                 <c:otherwise>
                     <c:set var="contactInfoFound" value="false" scope="page"/>
                     <c:forEach var="user" items="${users}">
