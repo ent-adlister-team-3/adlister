@@ -33,18 +33,22 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="page-wrapper">
     <div class="hero-container" id="hero-container">
-        <div class="image-text-1">
+        <div class="image-text-1 shadow">
             <h2>Shop Sustainably</h2>
         </div>
-        <div class="image-text-2">
+        <div class="image-text-2 shadow">
             <h2>Sell your old clothes</h2>
         </div>
-        <div class="image-text-3">
+        <div class="image-text-3 shadow">
             <h2>Save the planet</h2>
         </div>
         <form action="/register" method="GET">
             <input name="register" type="hidden">
-            <button class="register-btn" type="submit">Sign up now!</button>
+            <button class="register-btn shadow" type="submit">Sign up now!
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
         </form>
     </div>
     <div class="card-container">
@@ -63,6 +67,7 @@
             </c:forEach>
         </div>
     </div>
+    <button class=
 </div>
 
 </body>

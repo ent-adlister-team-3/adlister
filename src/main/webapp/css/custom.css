@@ -1,4 +1,4 @@
-.custom-registration-button{
+.custom-registration-button {
     width: 100%;
     border-radius: 2rem;
 }
@@ -10,34 +10,35 @@
     text-align: center;
 }
 
-.search-inc{
-    width: 30rem!important;
+.search-inc {
+    width: 30rem !important;
 }
 
-.search-opa{
+.search-opa {
     background-color: rgba(248, 249, 250, 0.48) !important;
     width: 90%;
 }
+
 .py-3.wbd {
     width: 90%;
 }
 
-.wbd{
+.wbd {
     width: 100%;
 }
 
-.btn-primary{
+.btn-primary {
     --bs-btn-bg: #FC5A8C;
-    --bs-btn-border-color: unset!important;
+    --bs-btn-border-color: unset !important;
     --bs-btn-hover-bg: #FF3170FF;
 }
 
-.link-pink{
+.link-pink {
     color: #ff8197;
 
 }
 
-.pill-search{
+.pill-search {
     border-radius: 4rem 0 0 4rem !important;
     background-color: rgba(248, 249, 250, 0.48) !important;
 
@@ -96,10 +97,12 @@
     min-height: 100vh;
     flex-direction: column;
 }
+
 .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .card-row {
@@ -149,7 +152,6 @@
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    /*background-color: white;*/
 }
 
 body {
@@ -159,9 +161,11 @@ body {
 .carousel.slide {
     height: 100%;
 }
+
 .carousel .carousel-inner {
     height: 100%;
 }
+
 .carousel .carousel-inner .carousel-item {
     height: 100%;
 }
@@ -208,7 +212,7 @@ textarea {
     margin-bottom: 2rem;
 }
 
-.edit-profile-btn{
+.edit-profile-btn {
     background-color: rgba(248, 249, 250, 0.58) !important;
 }
 
@@ -223,7 +227,7 @@ textarea {
     background-color: #ff4867;
 }
 
-.card-size{
+.card-size {
     height: 35rem;
     width: 35rem;
 }
@@ -233,60 +237,49 @@ textarea {
     flex-direction: column;
     margin-top: 20px;
     align-self: center;
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     min-height: 550px;
     background-image: url("../img/ppg-background.webp");
     background-position: center center;
     background-size: cover;
     position: relative;
+    margin-left: 100px;
 }
 
 .image-text-2 {
     position: absolute;
     top: 35%;
-    left: 15%;
+    left: 13%;
     margin-left: 20px;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     text-align: center;
     border-radius: 5px;
-<<<<<<< HEAD
-    font-weight: bold;
 }
 
 .image-text-1 {
     position: absolute;
     top: 15%;
-    left: 15%;
+    left: 13%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     text-align: center;
     border-radius: 5px;
-    font-weight: bold;
 }
 
 .image-text-3 {
     position: absolute;
     top: 55%;
-    left: 14%;
+    left: 12%;
     /*width: 310px;*/
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     text-align: center;
     border-radius: 5px;
-    font-weight: bolder;
-}
-
-.register-btn {
-    position: absolute;
-    top: 75%;
-    left: 10%;
-    height: 75px;
-    width: 235px;
-    font-size: 32px;
 }
 
 .hide-hero {
@@ -297,7 +290,7 @@ input#username {
     width: 100%;
 }
 
-input#password{
+input#password {
     width: 100%;
 }
 
@@ -305,5 +298,90 @@ input.btn.btn-primary.btn-block.custom-registration-button.shadow {
     margin-top: 3rem;
     width: 100%;
 }
+
+
+/*.register-btn {*/
+/*    position: absolute;*/
+/*    top: 75%;*/
+/*    left: 4%;*/
+/*    height: 75px;*/
+/*    width: 235px;*/
+/*    font-size: 32px;*/
+/*    !*color: white;*!*/
+/*    !*background-color: #ff002d2b;*!*/
+/*    !*transition: background-color 0.3s;*!*/
+/*}*/
+
+/*.register-btn:hover {*/
+/*    background-color: #ff4867;*/
+/*}*/
+
+/*https://uiverse.io/satyamchaudharydev/modern-sheep-10*/
+.register-btn {
+    --primary-color: #98DAF1;
+    --secondary-color: black;
+    --hover-color: #33ACE3;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    position: absolute;
+    top: 75%;
+    left: 2%;
+    height: 75px;
+    width: 250px;
+    font-size: 30px;
+    padding: 15px;
+}
+
+.register-btn .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-btn .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.register-btn .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.register-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.register-btn:hover .arrow {
+    background: var(--secondary-color);
+}
+
+.register-btn:hover .arrow:before {
+    right: 0;
+}
+
 
 
