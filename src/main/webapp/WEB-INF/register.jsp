@@ -7,16 +7,18 @@
     <script>
         function validateForm() {
             let username = document.getElementById("username").value;
+            let phoneNumber = document.getElementById("phoneNumber").value;
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
             let confirm_password = document.getElementById("confirm_password").value;
-            let phoneNumber = document.getElementById("phoneNumber").value;
+
 
             let usernameError = document.getElementById("usernameError");
+            let phoneNumberError = document.getElementById("phoneNumberError");
             let emailError = document.getElementById("emailError");
             let passwordError = document.getElementById("passwordError");
             let confirmPasswordError = document.getElementById("confirmPasswordError");
-            let phoneNumberError = document.getElementById("phoneNumberError");
+
 
             usernameError.textContent = "";
             emailError.textContent = "";
@@ -26,6 +28,11 @@
 
             if (username === "") {
                 usernameError.textContent = "Please enter a username.";
+                return false;
+            }
+
+            if (phoneNumber === "") {
+                phoneNumberError.textContent = "Please enter a phone number.";
                 return false;
             }
 
@@ -41,11 +48,6 @@
 
             if (confirm_password === "") {
                 confirmPasswordError.textContent = "Please confirm your password.";
-                return false;
-            }
-
-            if (phoneNumber === "") {
-                phoneNumberError.textContent = "Please enter a phone number.";
                 return false;
             }
 
@@ -83,6 +85,12 @@
                     <span id="usernameError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
+                    <label for="phoneNumber">Phone Number</label><br>
+                    <input id="phoneNumber" name="phoneNumber" class="form-control search-opa-R" type="text"
+                           placeholder="Enter Phone Number...">
+                    <span id="phoneNumberError" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
                     <label for="email">Email</label>
                     <input id="email" name="email" class="form-control search-opa-R" type="text" placeholder="Enter Email...">
                     <span id="emailError" class="text-danger"></span>
@@ -98,12 +106,6 @@
                     <input id="confirm_password" name="confirm_password" class="form-control search-opa-R" type="password"
                            placeholder="Re-Enter Password...">
                     <span id="confirmPasswordError" class="text-danger"></span>
-                </div>
-                <div class="form-group mb-4">
-                    <label for="phoneNumber">Phone Number</label><br>
-                    <input id="phoneNumber" name="phoneNumber" class="form-control search-opa-R" type="text"
-                           placeholder="Enter Phone Number...">
-                    <span id="phoneNumberError" class="text-danger"></span>
                 </div>
                 <div class="py-3 wbd">
                     <input type="submit" class="btn btn-primary shadow btn-block custom-registration-button">
