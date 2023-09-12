@@ -8,24 +8,62 @@
 </head>
 <body>
 <div class="container">
-    <h1>Edit your ad</h1>
-    <form action="/ads/edit" method="POST">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text" value="${editedAd.getTitle()}">
+    <div class="row">
+        <div class="col align-self-center px-2 mx-2 my-5 d-flex justify-content-center">
+            <div class="card card-size" style="width: 35rem;">
+                <%--            <img class="card-img-top" src="..." alt="Card image cap">--%>
+                <div class="card-body card-size">
+                    <h1 class="card-title text-center"><strong>Edit your Post</strong></h1>
+                    <form action="/ads/edit" method="POST" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="title"><strong>Title:</strong></label>
+                            <input id="title" name="title" class="form-control" type="text" value="${editedAd.getTitle()}">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="description"><strong>Description:</strong></label>
+                            <textarea id="description" name="description" class="form-control" type="text">${editedAd.getDescription()}</textarea>
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="price"><strong>Price:</strong></label>
+                            <input id="price" name="price" class="form-control" type="text" value="${editedAd.getPrice()}">
+                            <br>
+                        </div>
+                        <input name="edit" value="${editedAd.getId()}" type="hidden">
+                        <input type="submit" class="btn btn-primary btn-block custom-registration-button shadow">
+                        <div class="text-center">
+                            <br>
+                            <a class="link-pink link-opacity-100 link-opacity-50-hover"
+                               href="/profile">Cancel</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text">${editedAd.getDescription()}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input id="price" name="price" class="form-control" type="text" value="${editedAd.getPrice()}">
-        </div>
-        <input name="edit" value="${editedAd.getId()}" type="hidden">
-        <input type="submit" class="btn btn-block btn-primary">
-    </form>
+    </div>
 </div>
+<script>
+    function validateForm() {
+        let title = document.getElementById("title").value;
+        let price = document.getElementById("price").value;
+
+        // Check if the title is empty
+        if (title.trim() === "") {
+            alert("Please enter a title.");
+            return false; // Prevent form submission
+        }
+
+        // Check if the price contains only numbers
+        if (!/^\d+$/.test(price)) {
+            alert("Price must contain numbers only.");
+            return false; // Prevent form submission
+        }
+
+        return true; // Allow form submission if all checks pass
+    }
+</script>
+
 
 </body>
 </html>
