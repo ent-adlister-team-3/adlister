@@ -10,5 +10,10 @@
         font-weight: 300;
     }
 </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="/css/custom.css">
 <link rel="icon" type="image/x-icon" href="../img/favicon.ico.png">
