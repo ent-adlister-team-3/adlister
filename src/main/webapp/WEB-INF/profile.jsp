@@ -74,6 +74,9 @@
             <div class="centerText center-text mb-5">
                 <h2 class="center-text"><strong>Here are you current posts!</strong></h2>
             </div>
+            <div>
+                <div class="horizontal-line pt-2 mt-2"></div>
+            </div>
             <article>
                 <div class="row">
                     <c:forEach var="ad" items="${userAds}">
