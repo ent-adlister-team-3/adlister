@@ -2,24 +2,27 @@
     <div class="carousel-inner">
 <%--        need img 916x700--%>
         <div class="carousel-item active img">
-            <img src="/img/bubbles.png" class="d-block w-100" alt="Kill Bill Poster">
+            <img src="/img/bub.jpg" class="d-block h-100" alt="Kill Bill Poster">
             <div class="carousel-caption d-none d-md-block">
-                <h4>First slide label</h4>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h4 class="r-text"><strong>
+                    Shop Sustainably
+                </strong></h4>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="/img/blossom.jpeg" class="d-block w-100" alt="...">
+            <img src="/img/blom.jpg" class="d-block h-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h4>second slide label</h4>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h4 class="r-text"><strong>
+                    Sell your old clothes
+                </strong></h4>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="/img/blossom.jpeg" class="d-block w-100" alt="...">
+            <img src="/img/butter.jpg" class="d-block h-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h4>third slide label</h4>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h4 class="r-text"><strong>
+                    Save the planet
+                </strong></h4>
             </div>
         </div>
     </div>
