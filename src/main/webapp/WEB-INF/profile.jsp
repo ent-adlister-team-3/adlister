@@ -1,10 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
+
+    <script>
+        let price = document.getElementById("price").value;
+        let priceError = document.getElementById("priceError");
+        priceError.textContent = "";
+
+
+    </script>
 
 
 
@@ -38,13 +47,10 @@
                     </button>
                 </form>
             </div>
-
-
             <br>
             <div class="horizontal-line pt-2 mt-2"></div>
             <br>
-
-            <div class="">
+            <div>
                 <h1><strong>Create a new Post</strong></h1>
                 <form action="/ads/create" method="post">
                     <div class="form-group mb-4 mt-2">
@@ -59,14 +65,13 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="price">Price</label>
-                        <input id="price" name="price" class="form-control search-opa" type="text"
-                               placeholder="1-9999999">
+                        <input id="price" name="price" class="form-control search-opa" type="text" placeholder="1-9999999">
+                        <p id="priceError" class="text-danger"></p>
                     </div>
+
                     <input type="submit" class="btn btn-block btn-primary mt-3">
                 </form>
             </div>
-
-
         </div>
 
 
