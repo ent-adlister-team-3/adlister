@@ -259,6 +259,10 @@ textarea {
     border-radius: 5px;
 }
 
+.card-size {
+    height: 100%;
+    width: 100%;
+}
 .image-text-1 {
     position: absolute;
     top: 15%;
