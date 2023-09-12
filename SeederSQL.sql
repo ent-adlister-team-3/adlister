@@ -33,4 +33,5 @@ VALUES (1, 'Gucci Sunglasses', 'Gently used, authentic, black Gucci sunglasses.'
        (3, 'Grey Zip-up Hoodie',
         'Cancun, Mexico jacket, medium size, fits like a small, gently used, small stain on sleeve', 20.00);
 
-
+INSERT INTO ads (user_id, title, description, price)
+VALUE (1, 'test', 'testing', 12.55)

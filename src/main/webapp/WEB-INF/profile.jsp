@@ -30,8 +30,7 @@
 
 
 
-            // Check if the input is a valid number using a regular expression
-            if (!/^\d+$/.test(price)) {
+            if (!/^\d+(\.\d+)?$/.test(price)) {
                 priceError.textContent = "Please enter a valid number.";
                 return false;
             }

@@ -5,26 +5,6 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Please Log In"/>
     </jsp:include>
-
-    <script>
-        function validateForm() {
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-            let FormError = document.getElementById("FormError");
-
-
-            if (username === "correctUsername" && password === "correctPassword") {
-                FormError.innerHTML = "";
-                return true;
-            } else {
-                FormError.innerHTML = "Incorrect username or password.";
-                return false;
-            }
-        }
-
-    </script>
-
-
 </head>
 
 <body>
@@ -41,14 +21,10 @@
                     <h1 class="card-title text-center"><strong>Log In</strong></h1>
                     <div class="my-4">
                         <p>Don't have an account yet?<a class="link-pink link-opacity-100 link-opacity-50-hover"
-                                                        href="/register">Sign Up Now!</a></p>
+                                                         href="/register">Sign Up Now!</a></p>
                     </div>
-                    <form action="/login" method="POST" onsubmit="return validateForm()">
-                        <div class="form-group mb-4 text-center">
-                            <div class="mb-4 mt-3">
-                                <span id="FormError" class="text-danger"></span>
-                            </div>
-
+                    <form action="/login" method="POST">
+                        <div class="form-group mb-4">
                             <label for="username">Username</label>
                             <input id="username" name="username" class="form-control search-opa" type="text"
                                    placeholder="PowerPuffGirls">
