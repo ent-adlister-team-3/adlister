@@ -85,7 +85,29 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findById(long userId) {
-        return null;
+        String query = "SELECT * FROM users WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new User(
+                        rs.getLong("id"),
+                        rs.getString("username"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("phone_number") // assuming the database has a phone_number column
+                );
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding user by ID.", e);
+        }
+
     }
+
+
+
 
 }
