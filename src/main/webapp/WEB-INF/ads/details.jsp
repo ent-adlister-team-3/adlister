@@ -11,22 +11,25 @@
 <div class="container">
     <c:choose>
         <c:when test="${adDetails.getUserId() == sessionScope.user.id}">
-            <h1>${adDetails.getTitle()}</h1>
-            <p>${adDetails.getDescription()}</p>
-            <p>${adDetails.getPrice()}</p>
-            <p>Contact the seller:</p>
-            <p>${sessionScope.user.phoneNumber}</p>
-            <p>${sessionScope.user.email}</p>
-            <form action="/ads/edit" method="GET">
-                <input name="edit" value="${adDetails.getId()}" type="hidden">
-                <button type="submit">Edit</button>
-            </form>
-            <form action="/ads/delete" method="POST">
-                <input name="delete" value="${adDetails.getId()}" type="hidden">
-                <button type="submit">Delete</button>
-            </form>
+            <div class="details-card">
+                <h1>${adDetails.getTitle()}</h1>
+                <p>${adDetails.getDescription()}</p>
+                <p>${adDetails.getPrice()}</p>
+                <p>Contact the seller:</p>
+                <p>${sessionScope.user.phoneNumber}</p>
+                <p>${sessionScope.user.email}</p>
+                <form action="/ads/edit" method="GET">
+                    <input name="edit" value="${adDetails.getId()}" type="hidden">
+                    <button class="btn-edit" type="submit">Edit</button>
+                </form>
+                <form action="/ads/delete" method="POST">
+                    <input name="delete" value="${adDetails.getId()}" type="hidden">
+                    <button class="btn-edit" type="submit">Delete</button>
+                </form>
+            </div>
         </c:when>
         <c:otherwise>
+        <div class="details-card">
             <h1>${adDetails.getTitle()}</h1>
             <p>${adDetails.getDescription()}</p>
             <p>${adDetails.getPrice()}</p>
@@ -49,6 +52,7 @@
                     </c:if>
                 </c:otherwise>
             </c:choose>
+        </div>
         </c:otherwise>
     </c:choose>
 </div>
