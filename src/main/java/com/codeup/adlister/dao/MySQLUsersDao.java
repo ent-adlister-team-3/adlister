@@ -139,4 +139,27 @@ public class MySQLUsersDao implements Users {
         }
         return users;
     }
+
+    @Override
+    public boolean usernameExists(String username){
+        return recordExists("username", username);
+    }
+
+    @Override
+    public boolean emailExists(String email){
+        return recordExists("email", email);
+    }
+
+    private boolean recordExists(String field, String value) {
+        String query = "SELECT * FROM users WHERE " + field + " = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, value);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

@@ -14,4 +14,7 @@ public interface Users {
     User findById(long userId);
 
     List<User> all();
+
+    boolean usernameExists(String username);
+    boolean emailExists(String email);
 }

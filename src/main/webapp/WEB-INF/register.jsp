@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -61,7 +62,6 @@
     </script>
 
 
-
 </head>
 <body>
 <header>
@@ -71,7 +71,7 @@
 <div class="container-fluid min-vh-100 p-0">
     <div class="row min-vh-100 p-0">
         <div class="col-8">
-            <jsp:include page="/WEB-INF/partials/carosuel.jsp" />
+            <jsp:include page="/WEB-INF/partials/carosuel.jsp"/>
         </div>
         <div class="col-4 py-5 mr-2">
 
@@ -80,8 +80,12 @@
 
             <form action="/register" method="post" onsubmit="return validateForm()">
                 <div class="form-group mb-4 ">
-                    <label for="username" >Username</label> <br>
-                    <input id="username" name="username" class="form-control search-opa-R" type="text" placeholder="Enter Username...">
+                    <label for="username">Username</label> <br>
+                    <input id="username" name="username" class="form-control search-opa-R" type="text"
+                           placeholder="Enter Username...">
+                    <c:if test="${param.error == 'username-exists'}">
+                        <span class="text-danger">Username already exists. Please choose another one.</span>
+                    </c:if>
                     <span id="usernameError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
@@ -92,7 +96,11 @@
                 </div>
                 <div class="form-group mb-4">
                     <label for="email">Email</label>
-                    <input id="email" name="email" class="form-control search-opa-R" type="text" placeholder="Enter Email...">
+                    <input id="email" name="email" class="form-control search-opa-R" type="text"
+                           placeholder="Enter Email...">
+                    <c:if test="${param.error == 'email-exists'}">
+                        <span class="text-danger">Email already exists. Please use another email.</span>
+                    </c:if>
                     <span id="emailError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4 ">
@@ -102,8 +110,9 @@
                     <span id="passwordError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
-                    <label for="confirm_password" >Confirm Password</label><br>
-                    <input id="confirm_password" name="confirm_password" class="form-control search-opa-R" type="password"
+                    <label for="confirm_password">Confirm Password</label><br>
+                    <input id="confirm_password" name="confirm_password" class="form-control search-opa-R"
+                           type="password"
                            placeholder="Re-Enter Password...">
                     <span id="confirmPasswordError" class="text-danger"></span>
                 </div>
@@ -112,13 +121,14 @@
                 </div>
             </form>
             <div>
-               <p> Already Have an Account? <a class="link-pink link-opacity-100 link-opacity-50-hover" href="/login">Login</a></p>
+                <p> Already Have an Account? <a class="link-pink link-opacity-100 link-opacity-50-hover" href="/login">Login</a>
+                </p>
             </div>
         </div>
     </div>
 </div>
 <div>
-    <jsp:include page="/WEB-INF/partials/script.jsp" />
+    <jsp:include page="/WEB-INF/partials/script.jsp"/>
 </div>
 </body>
 </html>
