@@ -36,7 +36,7 @@
                         <br>
                         <div class="form-group mb-4">
                             <label for="password">Password:</label>
-                            <input id="password" type="password" name="password" class="form-control wbd">
+                            <input id="password" type="password" name="password" class="form-control wbd" value="${user.password}">
                         </div>
                         <br>
                         <div class="form-group mb-4">
