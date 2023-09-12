@@ -12,4 +12,6 @@ public interface Users {
     void editUser(User user);
 
     User findById(long userId);
+
+    List<User> all();
 }
