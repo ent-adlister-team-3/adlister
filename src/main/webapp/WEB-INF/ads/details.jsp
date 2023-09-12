@@ -14,6 +14,9 @@
             <h1>${adDetails.getTitle()}</h1>
             <p>${adDetails.getDescription()}</p>
             <p>${adDetails.getPrice()}</p>
+            <p>Contact the seller:</p>
+            <p>${sessionScope.user.phoneNumber}</p>
+            <p>${sessionScope.user.email}</p>
             <form action="/ads/edit" method="GET">
                 <input name="edit" value="${adDetails.getId()}" type="hidden">
                 <button type="submit">Edit</button>
@@ -27,6 +30,25 @@
             <h1>${adDetails.getTitle()}</h1>
             <p>${adDetails.getDescription()}</p>
             <p>${adDetails.getPrice()}</p>
+            <p>Contact the Seller: ${}</p>
+            <c:choose>
+                <c:if test="${empty users}">
+                    <p>Sorry, no users found</p>
+                </c:if>
+                <c:otherwise>
+                    <c:set var="contactInfoFound" value="false" scope="page"/>
+                    <c:forEach var="user" items="${users}">
+                        <c:if test="${adDetails.getUserId() == user.id}">
+                            <p>${user.phoneNumber}</p>
+                            <p>${user.email}</p>
+                            <c:set var="contactInfoFound" value="true" scope="page"/>
+                        </c:if>
+                    </c:forEach>
+                    <c:if test="${!contactInfoFound}">
+                        <p>Sorry, contact info not found</p>
+                    </c:if>
+                </c:otherwise>
+            </c:choose>
         </c:otherwise>
     </c:choose>
 </div>
