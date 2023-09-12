@@ -61,14 +61,12 @@ public class MySQLUsersDao implements Users {
         if (!rs.next()) {
             return null;
         }
-        String formattedPhoneNumber = formatPhoneNumber(rs.getString("phone_number"));
         return new User(
                 rs.getLong("id"),
                 rs.getString("username"),
                 rs.getString("email"),
                 rs.getString("password"),
-//                rs.getString("phone_number"),
-                formattedPhoneNumber
+                rs.getString("phone_number")
         );
     }
 
@@ -139,16 +137,6 @@ public class MySQLUsersDao implements Users {
             users.add(formatUser(rs));
         }
         return users;
-    }
-
-    private String formatPhoneNumber(String phoneNumber) {
-        if (phoneNumber == null || phoneNumber.length() != 10) {
-            return "Invalid number";
-        }
-        String areaCode = phoneNumber.substring(0, 3);
-        String centralOfficeCode = phoneNumber.substring(3, 6);
-        String stationCode = phoneNumber.substring(6);
-        return "(" + areaCode + ") " + centralOfficeCode + "-" + stationCode;
     }
 
 }
