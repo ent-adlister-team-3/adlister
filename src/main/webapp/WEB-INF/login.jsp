@@ -20,7 +20,7 @@
                 <div class="card-body card-size">
                     <h1 class="card-title text-center"><strong>Log In</strong></h1>
                     <div class="my-4">
-                        <p>Don't have an account yet?<a class="link-pink link-opacity-100 link-opacity-50-hover"
+                        <p>Don't have an account yet? <a class="link-pink link-opacity-100 link-opacity-50-hover"
                                                          href="/register">Sign Up Now!</a></p>
                     </div>
                     <form action="/login" method="POST">
