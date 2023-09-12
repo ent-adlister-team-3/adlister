@@ -21,17 +21,22 @@
                         </div>
                         <div class="form-group mb-4">
                             <label for="username">Username:</label>
-                            <input id="username" type="text" name="username" class="form-control wbd" value="${user.username}" required>
+                            <input id="username" type="text" name="username" class="form-control wbd" value="${user.username}">
+                        </div>
+                        <br>
+                        <div class="form-group mb-4">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input id="phoneNumber" type="text" name="phone_number" class="form-control wbd" value="${user.phoneNumber}">
                         </div>
                         <br>
                         <div class="form-group mb-4">
                             <label for="email">Email:</label>
-                            <input id="email" type="email" name="email" class="form-control wbd" value="${user.email}" required>
+                            <input id="email" type="email" name="email" class="form-control wbd" value="${user.email}">
                         </div>
                         <br>
                         <div class="form-group mb-4">
                             <label for="password">Password:</label>
-                            <input id="password" type="password" name="password" class="form-control wbd" required>
+                            <input id="password" type="password" name="password" class="form-control wbd">
                         </div>
                         <br>
                         <div class="form-group mb-4">
