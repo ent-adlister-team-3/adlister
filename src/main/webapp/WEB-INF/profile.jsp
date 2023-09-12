@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -56,7 +57,10 @@
                 <h1><strong>Welcome,<br>${sessionScope.user.username}!</strong></h1>
             </div>
             <div class="">
-                <p>Phone Number: ${sessionScope.user.phoneNumber}<br></p>
+                <p>Phone number: (<c:out value="${fn:substring(sessionScope.user.phoneNumber, 0, 3)}"/>)
+                    <c:out value="${fn:substring(sessionScope.user.phoneNumber, 3, 6)}"/>-<c:out
+                            value="${fn:substring(sessionScope.user.phoneNumber, 6, 10)}"/>
+                </p>
                 <p>Email: ${sessionScope.user.email}</p>
                 <br>
                 <form action="/editUser" method="GET">
@@ -127,7 +131,6 @@
                     <c:forEach var="ad" items="${userAds}">
                         <div class="col-4">
                             <div class="card shadow mb-3">
-                                    <%-- <img class="card-img-top" src="..." alt="Card image cap"> --%>
                                 <div class="card-body">
                                     <div class="col">
                                         <h5 class="card-title text-center">${ad.title} <br></h5>

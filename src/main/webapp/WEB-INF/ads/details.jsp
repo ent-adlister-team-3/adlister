@@ -10,57 +10,79 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="container">
-    <c:choose>
-        <c:when test="${adDetails.getUserId() == sessionScope.user.id}">
-            <div class="details-card">
-                <h1>${adDetails.getTitle()}</h1>
-                <p>Description: ${adDetails.getDescription()}</p>
-                <p>$<fmt:formatNumber value="${adDetails.getPrice()}" type="number" minFractionDigits="2" maxFractionDigits="2" /></p>
-                <p>Contact the seller:</p>
-                <p>Phone number: (<c:out value="${fn:substring(sessionScope.user.phoneNumber, 0, 3)}"/>)
-                    <c:out value="${fn:substring(sessionScope.user.phoneNumber, 3, 6)}"/>-<c:out value="${fn:substring(sessionScope.user.phoneNumber, 6, 10)}"/>
-                </p>
-                <p>Email: ${sessionScope.user.email}</p>
-                <form action="/ads/edit" method="GET">
-                    <input name="edit" value="${adDetails.getId()}" type="hidden">
-                    <button class="btn-edit" type="submit">Edit</button>
-                </form>
-                <form action="/ads/delete" method="POST">
-                    <input name="delete" value="${adDetails.getId()}" type="hidden">
-                    <button class="btn-edit" type="submit">Delete</button>
-                </form>
-            </div>
-        </c:when>
-        <c:otherwise>
-        <div class="details-card">
-            <h1>${adDetails.getTitle()}</h1>
-            <p>Description: ${adDetails.getDescription()}</p>
-            <p>$<fmt:formatNumber value="${adDetails.getPrice()}" type="number" minFractionDigits="2" maxFractionDigits="2" /></p>
-            <p>Contact the Seller:</p>
-            <c:choose>
-                <c:when test="${empty users}">
-                    <p>Sorry, no users found</p>
-                </c:when>
-                <c:otherwise>
-                    <c:set var="contactInfoFound" value="false" scope="page"/>
-                    <c:forEach var="user" items="${users}">
-                        <c:if test="${adDetails.getUserId() == user.id}">
-                            <p>Phone number: (<c:out value="${fn:substring(user.phoneNumber, 0, 3)}"/>)
-                                <c:out value="${fn:substring(user.phoneNumber, 3, 6)}"/>-<c:out value="${fn:substring(user.phoneNumber, 6, 10)}"/>
-                            </p>
-                            <p>Email: ${user.email}</p>
-                            <c:set var="contactInfoFound" value="true" scope="page"/>
-                        </c:if>
-                    </c:forEach>
-                    <c:if test="${!contactInfoFound}">
-                        <p>Sorry, contact info not found</p>
-                    </c:if>
-                </c:otherwise>
-            </c:choose>
-        </div>
-        </c:otherwise>
-    </c:choose>
+<div class="page-wrapper">
+    <div class="details-container">
+        <c:choose>
+            <c:when test="${adDetails.getUserId() == sessionScope.user.id}">
+                <div class="details-card">
+                    <h1>${adDetails.getTitle()}</h1>
+                    <p>Description: ${adDetails.getDescription()}</p>
+                    <p>Price: $<fmt:formatNumber value="${adDetails.getPrice()}" type="number" minFractionDigits="2"
+                                                 maxFractionDigits="2"/></p>
+                    <p>Contact the seller:</p>
+                    <c:choose>
+                        <c:when test="${empty users}">
+                            <p>Sorry, no users found</p>
+                        </c:when>
+                        <c:otherwise>
+                            <c:set var="contactInfoFound" value="false" scope="page"/>
+                            <c:forEach var="user" items="${users}">
+                                <c:if test="${adDetails.getUserId() == user.id}">
+                                    <p>Phone number: (<c:out value="${fn:substring(user.phoneNumber, 0, 3)}"/>)
+                                        <c:out value="${fn:substring(user.phoneNumber, 3, 6)}"/>-<c:out
+                                                value="${fn:substring(user.phoneNumber, 6, 10)}"/>
+                                    </p>
+                                    <p>Email: ${user.email}</p>
+                                    <c:set var="contactInfoFound" value="true" scope="page"/>
+                                </c:if>
+                            </c:forEach>
+                            <c:if test="${!contactInfoFound}">
+                                <p>Sorry, contact info not found</p>
+                            </c:if>
+                        </c:otherwise>
+                    </c:choose>
+                    <form action="/ads/edit" method="GET">
+                        <input name="edit" value="${adDetails.getId()}" type="hidden">
+                        <button class="btn-edit" type="submit">Edit</button>
+                    </form>
+                    <form action="/ads/delete" method="POST">
+                        <input name="delete" value="${adDetails.getId()}" type="hidden">
+                        <button class="btn-edit" type="submit">Delete</button>
+                    </form>
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="details-card">
+                    <h1>${adDetails.getTitle()}</h1>
+                    <p>Description: ${adDetails.getDescription()}</p>
+                    <p>Price: $<fmt:formatNumber value="${adDetails.getPrice()}" type="number" minFractionDigits="2"
+                                                 maxFractionDigits="2"/></p>
+                    <p>Contact the Seller:</p>
+                    <c:choose>
+                        <c:when test="${empty users}">
+                            <p>Sorry, no users found</p>
+                        </c:when>
+                        <c:otherwise>
+                            <c:set var="contactInfoFound" value="false" scope="page"/>
+                            <c:forEach var="user" items="${users}">
+                                <c:if test="${adDetails.getUserId() == user.id}">
+                                    <p>Phone number: (<c:out value="${fn:substring(user.phoneNumber, 0, 3)}"/>)
+                                        <c:out value="${fn:substring(user.phoneNumber, 3, 6)}"/>-<c:out
+                                                value="${fn:substring(user.phoneNumber, 6, 10)}"/>
+                                    </p>
+                                    <p>Email: ${user.email}</p>
+                                    <c:set var="contactInfoFound" value="true" scope="page"/>
+                                </c:if>
+                            </c:forEach>
+                            <c:if test="${!contactInfoFound}">
+                                <p>Sorry, contact info not found</p>
+                            </c:if>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </c:otherwise>
+        </c:choose>
+    </div>
 </div>
 </body>
 </html>
