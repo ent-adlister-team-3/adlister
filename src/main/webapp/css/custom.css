@@ -235,26 +235,65 @@ textarea {
     align-self: center;
     width: 1200px;
     min-height: 550px;
-    background-image: url("../img/the-powerpuff-girls.webp");
+    background-image: url("../img/ppg-background.webp");
     background-position: center center;
     background-size: cover;
     position: relative;
 }
 
-.image-text {
+.image-text-2 {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 15%;
+    margin-left: 20px;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     text-align: center;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .card-size {
     height: 100%;
     width: 100%;
+}
+.image-text-1 {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.image-text-3 {
+    position: absolute;
+    top: 55%;
+    left: 14%;
+    /*width: 310px;*/
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+.register-btn {
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    height: 75px;
+    width: 235px;
+    font-size: 32px;
+}
+
+.hide-hero {
+    display: none;
 }
 
 input#username {
@@ -269,4 +308,5 @@ input.btn.btn-primary.btn-block.custom-registration-button.shadow {
     margin-top: 3rem;
     width: 100%;
 }
+
 
