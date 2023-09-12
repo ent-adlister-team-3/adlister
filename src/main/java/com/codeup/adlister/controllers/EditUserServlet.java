@@ -31,20 +31,14 @@ public class EditUserServlet extends HttpServlet {
         User editedUser = DaoFactory.getUsersDao().findById(userId);
         // add the ad to the req attributes
         if (editedUser != null) {
-            String formattedPhoneNumber = formatePhoneNumber(editedUser.getPhoneNumber());
-            editedUser.setPhoneNumber(formattedPhoneNumber);
             req.setAttribute("user", editedUser);
         }
-
         req.setAttribute("editUser", editedUser);
         req.getRequestDispatcher("/WEB-INF/editUser.jsp").forward(req, resp);
 
 
     }
 
-    private static String formatePhoneNumber(String phoneNumber) {
-        return "(" + phoneNumber.substring(0,3) + ") " + phoneNumber.substring(3,6) + "-" + phoneNumber.substring(6);
-    };
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
