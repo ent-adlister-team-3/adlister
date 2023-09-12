@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -41,7 +42,6 @@
     </script>
 
 
-
 </head>
 <body>
 
@@ -78,7 +78,7 @@
             <div>
                 <h1><strong>Create a new Post</strong></h1>
                 <form action="/ads/create" method="post" onsubmit="return validateForm()">
-                <div class="form-group mb-4 mt-2">
+                    <div class="form-group mb-4 mt-2">
                         <label for="title">Title</label>
                         <input id="title" name="title" class="form-control search-opa" type="text"
                                placeholder="Enter Title...">
@@ -91,7 +91,8 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="price">Price</label>
-                        <input id="price" name="price" class="form-control search-opa" type="text" placeholder="1-9999999">
+                        <input id="price" name="price" class="form-control search-opa" type="text"
+                               placeholder="1-9999999">
                         <p id="priceError" class="text-danger"></p>
                     </div>
 
@@ -137,8 +138,9 @@
                                     </div>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item price-color text-center"><strong>Price</strong>:
-                                        $${ad.price}</li>
+                                    <li class="list-group-item price-color text-center">Price:
+                                        $<fmt:formatNumber value="${ad.price}" type="number" minFractionDigits="2" maxFractionDigits="2"/>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
