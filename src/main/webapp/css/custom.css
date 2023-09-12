@@ -251,6 +251,8 @@ textarea {
     text-align: center;
     border-radius: 5px;
 }
+
+.card-size {
     height: 100%;
     width: 100%;
 }
