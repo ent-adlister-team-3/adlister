@@ -5,7 +5,6 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
-
     <script>
         function filterAds() {
             let searchQuery = document.getElementById("searchQuery").value.toLowerCase();
@@ -32,10 +31,19 @@
         }
     </script>
 
-
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
+<script>
+    let welcomeMessage = document.getElementById("welcome-message");
+
+    welcomeMessage.style.display = "block";
+
+    setTimeout(function () {
+        welcomeMessage.style.display = "none";
+    }, 9000);
+</script>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="page-wrapper">

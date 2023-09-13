@@ -461,3 +461,17 @@ input.btn.btn-primary.btn-block.custom-registration-button.shadow {
     margin-left: 50px;
     margin-top: 80px;
 }
+
+.main-menu {
+    color: #ff617d;
+    transition: background-color 0.3s ease;
+}
+.main-menu:hover {
+    color: #fc321a;
+    transform: scale(1.1);
+}
+
+.btn-primary{
+    --bs-btn-active-bg: #ff0029;
+}
+
