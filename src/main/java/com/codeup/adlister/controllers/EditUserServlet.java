@@ -27,9 +27,9 @@ public class EditUserServlet extends HttpServlet {
             return;
         }
         long userId = Long.parseLong(req.getParameter("editId"));
-        // find the actual ad object
+
         User editedUser = DaoFactory.getUsersDao().findById(userId);
-        // add the ad to the req attributes
+
         if (editedUser != null) {
             req.setAttribute("user", editedUser);
         }
@@ -41,7 +41,6 @@ public class EditUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String hash = BCrypt.hashpw(req.getParameter("password"), BCrypt.gensalt());
 
         long userId = Long.parseLong(req.getParameter("editId"));
         User user = DaoFactory.getUsersDao().findById(userId);
@@ -51,14 +50,6 @@ public class EditUserServlet extends HttpServlet {
         user.setUsername(req.getParameter("username"));
 
 
-
-//        User user = new User(
-//                userId,
-//                req.getParameter("username"),
-//                req.getParameter("email"),
-////                hash,
-//                req.getParameter("phone_number")
-//        );
         DaoFactory.getUsersDao().editUser(user);
         HttpSession session = req.getSession();
         session.setAttribute("user", user);

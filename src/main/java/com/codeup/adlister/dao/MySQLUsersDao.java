@@ -92,7 +92,6 @@ public class MySQLUsersDao implements Users {
             stmt.setLong(5, user.getId());
             stmt.executeUpdate();
         } catch (Exception e) {
-            // Handle errors
             e.printStackTrace();
         }
     }
@@ -110,7 +109,7 @@ public class MySQLUsersDao implements Users {
                         rs.getString("username"),
                         rs.getString("email"),
                         rs.getString("password"),
-                        rs.getString("phone_number") // assuming the database has a phone_number column
+                        rs.getString("phone_number")
                 );
             } else {
                 return null;

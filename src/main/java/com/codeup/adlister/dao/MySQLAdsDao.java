@@ -60,9 +60,9 @@ public class MySQLAdsDao implements Ads {
                 return ad;
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception appropriately
+            e.printStackTrace();
         }
-        return null; // Return null if no ad with the given ID was found
+        return null;
     }
     private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
         List<Ad> ads = new ArrayList<>();
@@ -106,26 +106,23 @@ public class MySQLAdsDao implements Ads {
         try {
             String query = "SELECT * FROM ads WHERE user_id = ?";
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setLong(1, user.getId()); // Assuming user has an ID field
+            preparedStatement.setLong(1, user.getId());
 
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                // Create Ad objects from the result set and add them to the list
                 Ad ad = new Ad(
                         resultSet.getLong("id"),
                         resultSet.getLong("user_id"),
                         resultSet.getString("title"),
                         resultSet.getString("description"),
                         resultSet.getDouble("price")
-                        // Add other fields as needed
                 );
                 userAds.add(ad);
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error fetching user ads.", e);
         } finally {
-            // Close database resources in the reverse order of opening
             if (resultSet != null) {
                 try {
                     resultSet.close();
