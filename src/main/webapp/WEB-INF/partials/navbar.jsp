@@ -2,7 +2,7 @@
 <nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar shadow">
     <img src="/img/icons.png" class="mx-4" alt="ppg"
          style="max-height: 40px; width: auto; display: block; margin: 0 auto">
-    <a class="navbar-brand font-size" href="/">
+    <a class="navbar-brand font-size main-menu" href="/">
         <c:choose>
             <c:when test="${pageContext.request.requestURI.endsWith('/profile.jsp')}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-backward" viewBox="0 0 16 16">
