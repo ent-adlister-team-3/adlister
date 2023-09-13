@@ -61,7 +61,7 @@
                 </div>
             </div>
             <form action="/" method="GET">
-                <input name="home-button" type="hidden">
+                <input type="hidden">
                 <button class="btn-edit home-btn" type="submit">Go to home page</button>
             </form>
         </c:when>
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <form action="/" method="GET">
-                <input name="home-button" type="hidden">
+                <input type="hidden">
                 <button class="btn-edit home-btn" type="submit">Go to home page</button>
             </form>
         </c:otherwise>
