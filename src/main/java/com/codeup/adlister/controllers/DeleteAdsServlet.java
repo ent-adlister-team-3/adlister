@@ -13,7 +13,6 @@ import java.io.IOException;
 @WebServlet("/ads/delete")
 public class DeleteAdsServlet extends HttpServlet {
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User loggedInUser = (User) req.getSession().getAttribute("user");

@@ -49,7 +49,6 @@ public class EditUserServlet extends HttpServlet {
         user.setEmail(req.getParameter("email"));
         user.setUsername(req.getParameter("username"));
 
-
         DaoFactory.getUsersDao().editUser(user);
         HttpSession session = req.getSession();
         session.setAttribute("user", user);

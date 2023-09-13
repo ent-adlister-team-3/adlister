@@ -47,13 +47,8 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-
         User user = new User(username, email, password, phoneNumber);
-
-
-
         String hash = Password.hash(user.getPassword());
-
         user.setPassword(hash);
 
         DaoFactory.getUsersDao().insert(user);
