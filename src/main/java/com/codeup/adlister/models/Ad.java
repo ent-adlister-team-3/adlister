@@ -42,8 +42,6 @@ public class Ad {
         this.price = price;
     }
 
-
-
     public long getId() {
         return id;
     }

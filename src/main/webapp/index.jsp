@@ -32,7 +32,6 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="page-wrapper">
     <div class="hero-container" id="hero-container">
         <div class="image-text-1 shadow">
@@ -78,14 +77,14 @@
         </c:forEach>
     </div>
 </div>
-</div>
 
 <div class="container-fluid bg-footer shadow">
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top">
         <div class="col">
-            <div>
-                <a href="#" class="link-pink link-opacity-100 link-opacity-50-hover">GO TO TOP PAGE</a>
-            </div>
+            <form action="/" method="GET">
+                <input name="home-button" type="hidden">
+                <button class="btn-edit home-btn" type="submit">Back to the top</button>
+            </form>
         </div>
         <div class="col"></div>
         <div class="col">

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface Ads {
     List<Ad> all();
+
     List<Ad> findByUser(User user);
 
     Long insert(Ad ad);
@@ -14,5 +15,6 @@ public interface Ads {
     Ad findById(long id);
 
     void editAd(Ad ad);
+
     void deleteAd(long id);
 }

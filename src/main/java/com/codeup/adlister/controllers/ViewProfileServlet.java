@@ -22,7 +22,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     }
 
     User currentUser = (User) request.getSession().getAttribute("user");
-
     List<Ad> userAds = DaoFactory.getAdsDao().findByUser(currentUser);
 
     request.setAttribute("userAds", userAds);

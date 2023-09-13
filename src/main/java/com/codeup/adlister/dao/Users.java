@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface Users {
     User findByUsername(String username);
+
     Long insert(User user);
 
     void editUser(User user);
@@ -16,5 +17,6 @@ public interface Users {
     List<User> all();
 
     boolean usernameExists(String username);
+
     boolean emailExists(String email);
 }
