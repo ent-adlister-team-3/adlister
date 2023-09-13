@@ -31,26 +31,38 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="page-wrapper">
-    <div class="hero-container" id="hero-container">
-        <div class="image-text-1 shadow">
-            <h2>Shop Sustainably</h2>
+
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+        <div class="hero-container" id="hero-container">
+            <div class="image-text-1 shadow">
+                <h2>Shop Sustainably</h2>
+            </div>
+            <div class="image-text-2 shadow">
+                <h2>Sell your old clothes</h2>
+            </div>
+            <div class="image-text-3 shadow">
+                <h2>Save the planet</h2>
+            </div>
+            <c:choose>
+                <c:when test="${empty sessionScope.user}">
+                    <form action="/register" method="GET">
+                        <input name="register" type="hidden">
+                        <button class="register-btn shadow" type="submit">Sign up now!
+                            <div class="arrow-wrapper">
+                                <div class="arrow"></div>
+                            </div>
+                        </button>
+                    </form>
+
+                </c:when>
+                <c:otherwise>
+                </c:otherwise>
+            </c:choose>
         </div>
-        <div class="image-text-2 shadow">
-            <h2>Sell your old clothes</h2>
-        </div>
-        <div class="image-text-3 shadow">
-            <h2>Save the planet</h2>
-        </div>
-        <form action="/register" method="GET">
-            <input name="register" type="hidden">
-            <button class="register-btn shadow" type="submit">Sign up now!
-                <div class="arrow-wrapper">
-                    <div class="arrow"></div>
-                </div>
-            </button>
-        </form>
     </div>
+
+
     <div class="card-container">
         <div class="card-row">
 
