@@ -108,10 +108,10 @@
 
                         if (/^\d*\.?\d{0,2}$/.test(value)) {
                             error.textContent = '';
-                            return true; // Form will submit
+                            return true;
                         } else {
                             error.textContent = 'Please enter a valid double with up to two decimal places.';
-                            return false; // Form won't submit
+                            return false;
                         }
                     }
                 </script>

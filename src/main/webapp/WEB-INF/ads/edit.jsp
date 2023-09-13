@@ -56,10 +56,6 @@
             return false;
         }
 
-        // if (description.trim() === "") {
-        //     errorSpan.innerHTML = "<span style='color: red;'>Please enter a description.</span>";
-        //     return false;
-        // }
 
         if (!/^\d+(\.\d{2})?$/.test(price)) {
             errorSpan.innerHTML = "<span style='color: red;'>Price must be a number.</span>";

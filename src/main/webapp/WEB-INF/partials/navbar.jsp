@@ -1,7 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- 1 row Navbar--%>
 <nav class="color-cycling-navbar navbar-expand-lg navbar-light bg-light color-cycling-navbar shadow">
-    <%--<nav class="navbar navbar-expand-lg shadow navbar-light bg-light color-cycling-navbar">--%>
     <img src="/img/icons.png" class="mx-4" alt="ppg"
          style="max-height: 40px; width: auto; display: block; margin: 0 auto">
     <a class="navbar-brand font-size" href="/">
@@ -27,8 +25,6 @@
     </button>
 
 
-    <%--    Pill search button--%>
-    <%--    Needs tp be centered (its currently above)--%>
     <c:if test="${pageContext.request.requestURI == '/index.jsp'}">
         <form style="margin-bottom: 2px">
             <div class="input-group search-inc mx-4 px-4">
@@ -61,8 +57,6 @@
                                 Login</a>
                         </li>
                     </c:if>
-                    <%--                    register button is getting removed Ava is going to put it in the home page "hero"--%>
-                    <%--                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>--%>
                 </c:when>
                 <c:otherwise>
                     <c:if test="${not pageContext.request.requestURI.endsWith('/profile.jsp')}">

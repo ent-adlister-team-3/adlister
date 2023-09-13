@@ -1,6 +1,5 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-<%--        need img 916x700--%>
         <div class="carousel-item active img">
             <img src="/img/bub.jpg" class="d-block h-100" alt="Kill Bill Poster">
             <div class="carousel-caption d-none d-md-block">

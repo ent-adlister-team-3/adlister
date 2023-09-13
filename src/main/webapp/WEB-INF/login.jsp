@@ -16,7 +16,6 @@
     <div class="row">
         <div class="col align-self-center px-2 mx-2 my-5 d-flex justify-content-center">
             <div class="card card-size" style="width: 35rem;">
-                <%--            <img class="card-img-top" src="..." alt="Card image cap">--%>
                 <div class="card-body card-size">
                     <h1 class="card-title text-center"><strong>Log In</strong></h1>
                     <div class="my-4">
