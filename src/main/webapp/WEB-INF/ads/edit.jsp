@@ -56,13 +56,8 @@
             return false;
         }
 
-        // if (description.trim() === "") {
-        //     errorSpan.innerHTML = "<span style='color: red;'>Please enter a description.</span>";
-        //     return false;
-        // }
-
-        if (!/^\d+(\.\d{2})?$/.test(price)) {
-            errorSpan.innerHTML = "<span style='color: red;'>Price must be a number.</span>";
+        if (!/^\d+(\.\d{1,2})?$/.test(price)) {
+            errorSpan.innerHTML = "<span style='color: red;'>Price must be a number with one or two decimal places.</span>";
             return false;
         }
 
