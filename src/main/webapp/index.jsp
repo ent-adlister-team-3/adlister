@@ -5,17 +5,19 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
-
     <script>
         function filterAds() {
             let searchQuery = document.getElementById("searchQuery").value.toLowerCase();
             let ads = document.getElementsByClassName("ad-card");
             let heroContainer = document.getElementById("hero-container");
+            let footer = document.querySelector(".bg-footer");
 
             if (searchQuery.trim() === "") {
                 heroContainer.classList.remove("hide-hero");
+                footer.style.display = "block";
             } else {
                 heroContainer.classList.add("hide-hero");
+                footer.style.display = "none";
             }
 
             for (let i = 0; i < ads.length; i++) {
@@ -28,9 +30,20 @@
             }
         }
     </script>
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
+<script>
+    let welcomeMessage = document.getElementById("welcome-message");
+
+    welcomeMessage.style.display = "block";
+
+    setTimeout(function () {
+        welcomeMessage.style.display = "none";
+    }, 9000);
+</script>
 
 <div class="page-wrapper">
     <div class="hero-container" id="hero-container">
