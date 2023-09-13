@@ -20,9 +20,9 @@ public class EditAdsServlet extends HttpServlet {
             return;
         }
         long adId = Long.parseLong(req.getParameter("edit"));
-        // find the actual ad object
+
         Ad editedAd = DaoFactory.getAdsDao().findById(adId);
-        // add the ad to the req attributes
+
         req.setAttribute("editedAd", editedAd);
         req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req, resp);
     }
