@@ -34,13 +34,13 @@
                             <input id="email" type="email" name="email" class="form-control wbd" value="${user.email}">
                         </div>
                         <br>
-                        <div class="form-group mb-4">
-                            <label for="password">Password:</label>
-                            <input id="password" type="password" name="password" class="form-control wbd" placeholder="Don't change unless you want to change your password!!!" value="${user.password}">
-                            <span class="text-danger">
-                                <h5>Don't change unless you want to change your password!!!</h5>
-                            </span>
-                        </div>
+<%--                        <div class="form-group mb-4">--%>
+<%--                            <label for="password">Password:</label>--%>
+<%--                            <input id="password" type="password" name="password" class="form-control wbd" placeholder="Don't change unless you want to change your password!!!" value="${user.password}">--%>
+<%--                            <span class="text-danger">--%>
+<%--                                <h5>Don't change unless you want to change your password!!!</h5>--%>
+<%--                            </span>--%>
+<%--                        </div>--%>
                         <br>
                         <div class="form-group mb-4">
                             <button type="submit" class="btn btn-primary btn-block custom-registration-button shadow">Save</button>

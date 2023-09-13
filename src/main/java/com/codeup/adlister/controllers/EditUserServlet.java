@@ -41,16 +41,24 @@ public class EditUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String hash = BCrypt.hashpw(req.getParameter("password"), BCrypt.gensalt());
+//        String hash = BCrypt.hashpw(req.getParameter("password"), BCrypt.gensalt());
 
         long userId = Long.parseLong(req.getParameter("editId"));
-        User user = new User(
-                userId,
-                req.getParameter("username"),
-                req.getParameter("email"),
-                hash,
-                req.getParameter("phone_number")
-        );
+        User user = DaoFactory.getUsersDao().findById(userId);
+
+        user.setPhoneNumber(req.getParameter("phone_number"));
+        user.setEmail(req.getParameter("email"));
+        user.setUsername(req.getParameter("username"));
+
+
+
+//        User user = new User(
+//                userId,
+//                req.getParameter("username"),
+//                req.getParameter("email"),
+////                hash,
+//                req.getParameter("phone_number")
+//        );
         DaoFactory.getUsersDao().editUser(user);
         HttpSession session = req.getSession();
         session.setAttribute("user", user);
