@@ -60,7 +60,21 @@
             return true;
         }
     </script>
+    <script>
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById("phoneNumber");
+            const phoneError = document.getElementById("phoneError");
+            const phoneNumber = phoneInput.value;
 
+            if (phoneNumber.length !== 10 || !/^\d+$/.test(phoneNumber)) {
+                phoneError.textContent = "Please enter a 10-digit phone number";
+                document.querySelector("input[type=submit]").disabled = true;
+            } else {
+                phoneError.textContent = "";
+                document.querySelector("input[type=submit]").disabled = false;
+            }
+        }
+    </script>
 
 </head>
 <body>
@@ -89,10 +103,9 @@
                     <span id="usernameError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
-                    <label for="phoneNumber">Phone Number</label><br>
-                    <input id="phoneNumber" name="phoneNumber" class="form-control search-opa-R" type="text"
-                           placeholder="Enter Phone Number...">
-                    <span id="phoneNumberError" class="text-danger"></span>
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input id="phoneNumber" type="text" name="phone_number" class="form-control search-opa-R" placeholder="Enter Phone Number..." oninput="validatePhoneNumber()" required>
+                    <span id="phoneError" class="text-danger"></span>
                 </div>
                 <div class="form-group mb-4">
                     <label for="email">Email</label>
@@ -117,7 +130,7 @@
                     <span id="confirmPasswordError" class="text-danger"></span>
                 </div>
                 <div class="py-3 wbd">
-                    <input type="submit" class="btn btn-primary shadow btn-block custom-registration-button">
+                    <input type="submit" class="btn btn-primary shadow btn-block custom-registration-button" disabled>
                 </div>
             </form>
             <div>

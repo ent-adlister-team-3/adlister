@@ -6,6 +6,21 @@
         <jsp:param name="title" value="editUser"/>
     </jsp:include>
     <title>Edit User</title>
+    <script>
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById("phoneNumber");
+            const phoneError = document.getElementById("phoneError");
+            const phoneNumber = phoneInput.value;
+
+            if (phoneNumber.length !== 10 || !/^\d+$/.test(phoneNumber)) {
+                phoneError.textContent = "Please enter a 10-digit phone number";
+                document.querySelector("button[type=submit]").disabled = true;
+            } else {
+                phoneError.textContent = "";
+                document.querySelector("button[type=submit]").disabled = false;
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -26,7 +41,8 @@
                         <br>
                         <div class="form-group mb-4">
                             <label for="phoneNumber">Phone Number:</label>
-                            <input id="phoneNumber" type="text" name="phone_number" class="form-control wbd" value="${user.phoneNumber}">
+                            <input id="phoneNumber" type="text" name="phone_number" class="form-control wbd" value="${user.phoneNumber}" oninput="validatePhoneNumber()" required>
+                            <span id="phoneError" class="text-danger"></span>
                         </div>
                         <br>
                         <div class="form-group mb-4">
