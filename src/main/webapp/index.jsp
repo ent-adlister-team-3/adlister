@@ -11,11 +11,14 @@
             let searchQuery = document.getElementById("searchQuery").value.toLowerCase();
             let ads = document.getElementsByClassName("ad-card");
             let heroContainer = document.getElementById("hero-container");
+            let footer = document.querySelector(".bg-footer");
 
             if (searchQuery.trim() === "") {
                 heroContainer.classList.remove("hide-hero");
+                footer.style.display = "block"; // Show the footer when there's no search query.
             } else {
                 heroContainer.classList.add("hide-hero");
+                footer.style.display = "none"; // Hide the footer when there's a search query.
             }
 
             for (let i = 0; i < ads.length; i++) {
@@ -28,6 +31,8 @@
             }
         }
     </script>
+
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
