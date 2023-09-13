@@ -11,19 +11,6 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<%--<div class="page-wrapper">--%>
-<%--    <div class="container">--%>
-<%--        <div class="details-container">--%>
-
-<%--            --%>
-<%--            --%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>
-
-
-
-
 
     <div class="details-container">
         <c:choose>
@@ -71,16 +58,6 @@
                             </c:otherwise>
                         </c:choose>
                     </div>
-                        <%--                    <div class="button-container">--%>
-                        <%--                        <form action="/ads/edit" method="GET">--%>
-                        <%--                            <input name="edit" value="${adDetails.getId()}" type="hidden">--%>
-                        <%--                            <button class="btn-edit" type="submit">Edit</button>--%>
-                        <%--                        </form>--%>
-                        <%--                        <form action="/ads/delete" method="POST">--%>
-                        <%--                            <input name="delete" value="${adDetails.getId()}" type="hidden">--%>
-                        <%--                            <button class="btn-edit" type="submit">Delete</button>--%>
-                        <%--                        </form>--%>
-                        <%--                    </div>--%>
                 </div>
             </div>
         </c:when>

@@ -58,6 +58,7 @@
 
         if (!/^\d+(\.\d{1,2})?$/.test(price)) {
             errorSpan.innerHTML = "<span style='color: red;'>Price must be a number with one or two decimal places.</span>";
+
             return false;
         }
 
