@@ -11,7 +11,6 @@
     <div class="row">
         <div class="col align-self-center px-2 mx-2 my-5 d-flex justify-content-center">
             <div class="card card-size" style="width: 35rem;">
-                <%--            <img class="card-img-top" src="..." alt="Card image cap">--%>
                 <div class="card-body card-size">
                     <h1 class="card-title text-center"><strong>Edit your Post</strong></h1>
                     <form action="/ads/edit" method="POST" onsubmit="return validateForm()">
@@ -30,6 +29,7 @@
                             <input id="price" name="price" class="form-control" type="text" value="${editedAd.getPrice()}">
                             <br>
                         </div>
+                        <div id="errorSpan"></div>
                         <input name="edit" value="${editedAd.getId()}" type="hidden">
                         <input type="submit" class="btn btn-primary btn-block custom-registration-button shadow">
                         <div class="text-center">
@@ -47,21 +47,28 @@
 <script>
     function validateForm() {
         let title = document.getElementById("title").value;
+        let description = document.getElementById("description").value;
         let price = document.getElementById("price").value;
+        let errorSpan = document.getElementById("errorSpan");
 
-        // Check if the title is empty
         if (title.trim() === "") {
-            alert("Please enter a title.");
-            return false; // Prevent form submission
+            errorSpan.innerHTML = "<span style='color: red;'>Please enter a title.</span>";
+            return false;
         }
 
-        // Check if the price is in the correct format (two decimal numbers)
+        // if (description.trim() === "") {
+        //     errorSpan.innerHTML = "<span style='color: red;'>Please enter a description.</span>";
+        //     return false;
+        // }
+
         if (!/^\d+(\.\d{2})?$/.test(price)) {
-            alert("Price must be in the format xx.xx (two decimal numbers).");
-            return false; // Prevent form submission
+            errorSpan.innerHTML = "<span style='color: red;'>Price must be a number.</span>";
+            return false;
         }
 
-        return true; // Allow form submission if all checks pass
+        errorSpan.innerHTML = "";
+
+        return true;
     }
 </script>
 
