@@ -12,8 +12,8 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 
-    <div class="details-container">
-        <c:choose>
+<div class="details-container">
+    <c:choose>
         <c:when test="${adDetails.getUserId() == sessionScope.user.id}">
             <div class="details-card">
                 <div class="row">
@@ -34,7 +34,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="card col card-rem">
+                    <div class="card col card-rem contact-card">
                         <p class="contact-title">Contact the seller:</p>
                         <c:choose>
                             <c:when test="${empty users}">
@@ -60,49 +60,54 @@
                     </div>
                 </div>
             </div>
+            <form action="/" method="GET">
+                <input name="home-button" type="hidden">
+                <button class="btn-edit home-btn" type="submit">Go to home page</button>
+            </form>
         </c:when>
         <c:otherwise>
-        <div class="details-card">
-            <div class="row">
-                <div class="card col card-rem">
-                    <h1>${adDetails.getTitle()}</h1>
-                    <p>Price: $<fmt:formatNumber value="${adDetails.getPrice()}" type="number"
-                                                 minFractionDigits="2"
-                                                 maxFractionDigits="2"/></p>
-                    <p>Description: ${adDetails.getDescription()}</p>
-                </div>
-                <div class="card col card-rem">
-                    <p>Contact the Seller:</p>
-                    <c:choose>
-                        <c:when test="${empty users}">
-                            <p>Sorry, no users found</p>
-                        </c:when>
-                        <c:otherwise>
-                            <c:set var="contactInfoFound" value="false" scope="page"/>
-                            <c:forEach var="user" items="${users}">
-                                <c:if test="${adDetails.getUserId() == user.id}">
-                                    <p>Phone number: (<c:out value="${fn:substring(user.phoneNumber, 0, 3)}"/>)
-                                        <c:out value="${fn:substring(user.phoneNumber, 3, 6)}"/>-<c:out
-                                                value="${fn:substring(user.phoneNumber, 6, 10)}"/>
-                                    </p>
-                                    <p>Email: ${user.email}</p>
-                                    <c:set var="contactInfoFound" value="true" scope="page"/>
+            <div class="details-card">
+                <div class="row">
+                    <div class="card col card-rem">
+                        <h1>${adDetails.getTitle()}</h1>
+                        <p>Price: $<fmt:formatNumber value="${adDetails.getPrice()}" type="number"
+                                                     minFractionDigits="2"
+                                                     maxFractionDigits="2"/></p>
+                        <p>Description: ${adDetails.getDescription()}</p>
+                    </div>
+                    <div class="card col card-rem contact-card">
+                        <p class="contact-title">Contact the Seller:</p>
+                        <c:choose>
+                            <c:when test="${empty users}">
+                                <p>Sorry, no users found</p>
+                            </c:when>
+                            <c:otherwise>
+                                <c:set var="contactInfoFound" value="false" scope="page"/>
+                                <c:forEach var="user" items="${users}">
+                                    <c:if test="${adDetails.getUserId() == user.id}">
+                                        <p>Phone number: (<c:out value="${fn:substring(user.phoneNumber, 0, 3)}"/>)
+                                            <c:out value="${fn:substring(user.phoneNumber, 3, 6)}"/>-<c:out
+                                                    value="${fn:substring(user.phoneNumber, 6, 10)}"/>
+                                        </p>
+                                        <p>Email: ${user.email}</p>
+                                        <c:set var="contactInfoFound" value="true" scope="page"/>
+                                    </c:if>
+                                </c:forEach>
+                                <c:if test="${!contactInfoFound}">
+                                    <p>Sorry, contact info not found</p>
                                 </c:if>
-                            </c:forEach>
-                            <c:if test="${!contactInfoFound}">
-                                <p>Sorry, contact info not found</p>
-                            </c:if>
-                        </c:otherwise>
-                    </c:choose>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
                 </div>
             </div>
-            </c:otherwise>
-            </c:choose>
-        </div>
-            <div class="row mt-5 pt-4 text-center">
-                <a href="/" class="link-pink link-opacity-100 link-opacity-50-hover">GO TO HOME PAGE</a>
-            </div>
-    </div>
+            <form action="/" method="GET">
+                <input name="home-button" type="hidden">
+                <button class="btn-edit home-btn" type="submit">Go to home page</button>
+            </form>
+        </c:otherwise>
+    </c:choose>
+</div>
 
 </body>
 </html>
