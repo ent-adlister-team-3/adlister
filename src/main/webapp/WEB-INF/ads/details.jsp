@@ -121,10 +121,10 @@
             </div>
             </c:otherwise>
             </c:choose>
-            <div class="row">
+        </div>
+            <div class="row mt-5 pt-4 text-center">
                 <a href="/" class="link-pink link-opacity-100 link-opacity-50-hover">GO TO HOME PAGE</a>
             </div>
-        </div>
     </div>
 
 </body>
