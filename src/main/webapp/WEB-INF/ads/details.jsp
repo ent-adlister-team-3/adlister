@@ -10,13 +10,27 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<div class="page-wrapper">
+
+<%--<div class="page-wrapper">--%>
+<%--    <div class="container">--%>
+<%--        <div class="details-container">--%>
+
+<%--            --%>
+<%--            --%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
+
+
+
+
+
     <div class="details-container">
         <c:choose>
         <c:when test="${adDetails.getUserId() == sessionScope.user.id}">
             <div class="details-card">
-                <div class="details-row">
-                    <div class="details-col">
+                <div class="row">
+                    <div class="card col card-rem">
                         <h1>${adDetails.getTitle()}</h1>
                         <p>Price: $<fmt:formatNumber value="${adDetails.getPrice()}" type="number"
                                                      minFractionDigits="2"
@@ -33,7 +47,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="contact-col">
+                    <div class="card col card-rem">
                         <p class="contact-title">Contact the seller:</p>
                         <c:choose>
                             <c:when test="${empty users}">
@@ -72,15 +86,15 @@
         </c:when>
         <c:otherwise>
         <div class="details-card">
-            <div class="details-row">
-                <div class="details-col">
+            <div class="row">
+                <div class="card col card-rem">
                     <h1>${adDetails.getTitle()}</h1>
                     <p>Price: $<fmt:formatNumber value="${adDetails.getPrice()}" type="number"
                                                  minFractionDigits="2"
                                                  maxFractionDigits="2"/></p>
                     <p>Description: ${adDetails.getDescription()}</p>
                 </div>
-                <div class="contact-col">
+                <div class="card col card-rem">
                     <p>Contact the Seller:</p>
                     <c:choose>
                         <c:when test="${empty users}">
@@ -107,8 +121,11 @@
             </div>
             </c:otherwise>
             </c:choose>
+            <div class="row">
+                <a href="/" class="link-pink link-opacity-100 link-opacity-50-hover">GO TO HOME PAGE</a>
+            </div>
         </div>
     </div>
-</div>
+
 </body>
 </html>
